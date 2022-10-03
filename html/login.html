@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Document</title>
   </head>
-  <body>
 
-    
+  <body>
     <header class="header">
-        <a class="nav" href="index.html">
-            <button id="home" class = "button">Home</button>
-        </a>
-        <a class="logo" href="#"><img src="../res/images/me.png" width="50" height="50" alt="My picture"></a>
+
+        <button class="nav" href="index.html" >Home</button>
+      
+        <a class="logo"
+          ><img
+            src="../res/images/me.png"
+            width="50"
+            height="50"
+            alt="My picture"
+        /></a>
+      </a>
     </header>
 
-
-
-    <div class="form">
-      <form>
+    <form>
+      <div class="form">
         <div class="window">
           <strong>Welcome to PostIt</strong>
           <a href="">Create an account</a>
-          <p>or</p>
-          <p>Please log in</p>
-          <input type="text" id="email">
-          <input type="text" id="password">
-          <button type="submit">Log in</button>
+          <p><span>or</span> <span>Please log in</span></p>
+          <input type="text" id="email" placeholder="Email" required="required"/>
+          <input type="text" id="password" placeholder="Password" required="required"/>
+          <button type="submit" required="required">Log in</button>
           <a href="">Forget password</a>
-          
-          
-
         </div>
-        </form>
-      </form>
-    </div>
+      </div>
+    </form>
 
-  </body>
 </html>

@@ -26,12 +26,21 @@
   align-items: center;
   justify-content: space-between;
   position: sticky;
-  top: 0; /* If sticky then you should specify the top position */
+  top: 0;
   width: 100%;
 }
 
 .nav {
   display: flex;
+}
+
+/* Descendant selector */
+header button{
+  margin-left: 1em;
+}
+
+header a {
+  padding-right: 1em;
 }
 
 .button {
@@ -40,36 +49,55 @@
 
 div form {
   display: flex;
-
 }
 
 .form {
-  background-color: gray;
-  height: 600px;
+  height: 500px;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  /* flex-flow: row wrap; */
   justify-content: center;
-  
 }
 
 .window {
-  background-color: rgb(133, 203, 133);
+  background-color: #a2ccea;
   border-radius: 5px;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 1em;
-  height: 400px;
-  width: -moz-max-content;
-  width: max-content;
+  height: 300px;
+  flex-grow: 0.3;
 }
 
-.window > input {height: 25px;}
+.window > * {
+  min-width: min-content;
+  max-width: 500px;
+} 
+
+/* child selector */
+.window > input { 
+  height: 25px;
+}
+
+p span {
+  display: block;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 0px;
+}
+
+/* Adjacent sibling selector */
+span + span {
+  margin-bottom: 0px
+}
 
 @media (hover: hover) {
+  /* Pseudo class */
   .header:hover {
     background-color: aqua;
   }

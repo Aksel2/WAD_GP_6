@@ -1,33 +1,81 @@
-.header {
-  position: sticky;
-  top: 0;
-  border: 1px solid #746161;
-  border-radius: 5px;
-  background-color: grey;
-  width: 100%;
-  height: 100px;
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  /*
+       CSS comment
+       The box-sizing CSS property sets how the total width and height of an element are calculated. 
+       If you set box-sizing: border-box; on an element, padding, and border are included in the width and height:
+    */
 }
 
-.flex {
-  margin: 20px auto;
-  width: 100%;
-  background-color: #ddd;
+*/ body {
+  line-height: 1.6;
+  margin: 0;
+}
+
+.header {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border: 1px solid #646174;
+  background-color: #a2ccea;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+
   display: flex;
   flex-direction: row;
-  justify-content: start;
   align-items: center;
-  gap: 10px;
-  padding-left: 10px;
-  margin-left: 10px;
-  
+  justify-content: space-between;
+  position: sticky;
+  top: 0; /* If sticky then you should specify the top position */
+  width: 100%;
+}
+
+.nav {
+  display: flex;
 }
 
 .button {
   height: 20px;
 }
 
+div form {
+  display: flex;
+
+}
+
+.form {
+  background-color: gray;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  /* flex-flow: row wrap; */
+  justify-content: center;
+  
+}
+
+.window {
+  background-color: rgb(133, 203, 133);
+  border-radius: 5px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  height: 400px;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.window > input {height: 25px;}
+
 @media (hover: hover) {
   .header:hover {
     background-color: aqua;
   }
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.1em;
 }

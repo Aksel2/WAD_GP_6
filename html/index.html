@@ -4,33 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../res/css/style_index.css">
+    <link rel="stylesheet" href="../css/style_index.css">
     <title>Index</title>
     
   </head>
   <body>
       
-<header class="header">
-    <a class="nav" href="index.html">
-      <button id="home" class = "button">Home</button>
-  </a> 
-</header>
-<div style='float:right; width: 180px;'>
-  <div style='position: fixed'>
-    <div class ="right2">
+
+    <header class="header">
+      <div id="butcon">
+      <form class="nav" action="index.html" method="get">
+        <button>Home</button>
+      </form>
+      <form class="nav" action="addPost.html" method="get">
+        <button>addPost</button>
+      </form>
+      </div>
+
+      <a class="logo">
+        <img src="../res/images/me.png" width="50" height="50" alt="My picture"></a>
+  </header>
+
+<div class="sidebar-pos">
+  <div style='position: fixed; right: 15.6%;'>
+    <div class ="sidebar-right">
     </div>
   </div>
  </div>
- <div class="left"></div>
+ <div class="sidebar-left">
+ </div>
 
 
 <div class = "posts">
-
     <div class ="container">
       <div class = "card">
         <div class = "card-heading">
           <div class = "box">
-          <img src = "../res/images/profile2.png" alt="profile picture" />
+          <img src = "../res/images/profile2.png" alt="profile picture">
          <div class = "right">
         <span>3 October, 2022</span>
       </div>
@@ -39,7 +49,7 @@
         <img src="../res/images/raekoda.JPG" alt="Image of Tartu raekoda">
         <p>Käisin Tartu raekojas!</p>
         <div class="card-footer">
-        <footer><img> </footer>
+        <footer><img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt = "Thumbs up"> </footer>
       </div>
       </div>
     </div>
@@ -48,16 +58,16 @@
       <div class = "card">
         <div class = "card-heading">
           <div class = "box">
-          <img src = "https://images.pexels.com/photos/3824771/pexels-photo-3824771.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="profile picture" />
+          <img src = "https://images.pexels.com/photos/3824771/pexels-photo-3824771.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="profile picture">
          <div class = "right">
         <span>2 October, 2022</span>
       </div>
           </div>
       </div>
-        <img src="https://c.tenor.com/6Pg-JQo6y2YAAAAC/klohe-klohecreation.gif">
+        <img src="https://c.tenor.com/6Pg-JQo6y2YAAAAC/klohe-klohecreation.gif" alt = "Gif of Newton's cradle">
         <p>Look at this moving picture!</p>
         <div class="card-footer">
-        <footer><img alt="Picture of thumbs up"></footer>
+        <footer><img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt = "Thumbs up"></footer>
       </div>
       </div>  
     </div>
@@ -66,7 +76,7 @@
       <div class = "card">
         <div class = "card-heading">
           <div class = "box">
-          <img src = "../res/images/profile2.png" alt="profile picture" />
+          <img src = "../res/images/profile2.png" alt="profile picture">
          <div class = "right">
         <span>29 September, 2022</span>
       </div>
@@ -79,7 +89,7 @@
           Let's shake it up a little. Barry! Breakfast is ready! Ooming! Hang on a second. 
           Hello? - Barry? - Adam? - Oan you believe this is happening? - I can't. I'll pick you up</p>
           <div class="card-footer">
-            <footer><img alt="Picture of thumbs up"></footer>
+            <footer><img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt = "Thumbs up"></footer>
           </div>
       </div>
     </div>
@@ -88,16 +98,16 @@
       <div class = "card">
         <div class = "card-heading">
           <div class = "box">
-          <img src = "https://sisu.ut.ee/sites/default/files/japaneseeconomy/files/uni_of_tartu.png" alt="profile picture" />
+          <img src = "https://sisu.ut.ee/sites/default/files/japaneseeconomy/files/uni_of_tartu.png" alt="profile picture">
          <div class = "right">
         <span>28 September, 2022</span>
       </div>
           </div>
       </div>
       <img src ="https://miro.medium.com/max/1200/1*5ZLci3SuR0zM_QlZOADv8Q.jpeg" alt="Graph of program time complexities">
-        <p>There is nothing faster than n²!</p>
+        <p>There is nothing faster than n²! Change my mind.</p>
         <div class="card-footer">
-        <footer><img> </footer>
+        <footer><img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt = "Thumbs up"> </footer>
       </div>
       </div>
     </div>
@@ -106,13 +116,13 @@
       <div class = "card">
         <div class = "card-heading">
           <div class = "box">
-          <img src = "../res/images/pic3.png" alt="profile picture" />
+          <img src = "../res/images/pic3.png" alt="profile picture">
          <div class = "right">
-        <span>1 June, 2022</span>
+        <span>1 September, 2022</span>
       </div>
           </div>
       </div>
-        <img src="https://i.insider.com/51d492b8ecad04093700000b?width=800&format=jpeg">
+        <img src="https://i.insider.com/51d492b8ecad04093700000b?width=800&format=jpeg" alt ="USA astronaut on the Moon">
         <p>The moon landing is physically impossible to achieve given the supposed time constraints. 
           Apparently Apollo 11 took 8 days and 3 hours to get to the moon. 
           That’s 195 hours. The moon is 238,900 miles away from earth. 
@@ -132,18 +142,58 @@
           An obvious fuel deficiency, inaccurate length of travel time, and the biological facts of humans makes the moon landing clearly impossible. 
         </p>
         <div class="card-footer">
-        <footer><img> </footer>
+        <footer><img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt = "Thumbs up"> </footer>
       </div>
       </div>
     </div>
+
+
+<div class ="container">
+  <div class = "card">
+    <div class = "card-heading">
+      <div class = "box">
+      <img src = "../res/images/pic3.png" alt="profile picture">
+     <div class = "right">
+    <span>30 August, 2022</span>
+  </div>
+      </div>
+  </div>
+    <p>😀 😃 😄 😁 😆 😅 😂 🤣😊 😇
+       🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚
+        😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩
+         🥳 😏 😒 😞 😔 😟 😕 🙁☹️ 😣 😖 😫 😩 🥺 😢 😭 😮‍💨 😤 😠 😡 🤬 🤯 😳 🥵 
+         🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😶‍🌫️ 😐 😑 😬 
+         🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 😵‍💫 🤐 🥴 🤢 🤮
+    </p>
+    <div class="card-footer">
+    <footer><img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt = "Thumbs up"> </footer>
+  </div>
+  </div>
+</div>
+
+
+<div class ="container">
+  <div class = "card">
+    <div class = "card-heading">
+      <div class = "box">
+      <img src = "https://seeklogo.com/images/T/tartu-ulikool-university-tartuensis-logo-327A474B2A-seeklogo.com.png" alt="profile picture">
+     <div class = "right">
+    <span>30 August, 2022</span>
+  </div>
+      </div>
+  </div>
+  <img src ="https://ut.ee/sites/default/files/styles/facebook/public/migrate/news/foto_andres_tennus.jpg?itok=yx4fkIu" alt = "Tartu Ülikooli peahoone">
+    <p>Tartu Ülikool (lühend TÜ) on vanim ja suurim Eestis tegutsev ülikool ning ühtlasi Baltimaade ainus ülikool, mis kuulub 1,2% maailma parimate sekka.
+      Tartu ülikooli asutamiseks loetakse aastat 1632, mil Tartus avati Academia Gustaviana. Ülikooli ajaloos on eri perioode ja mitu tegevuse katkemist. 
+      Eestikeelse ülikoolina alustati tööd 1919. aastal. Aastail 1940–1941 ja 1944–1989 kandis ülikool nime Tartu Riiklik Ülikool (lühend TRÜ). 
+    </p>
+    <div class="card-footer">
+    <footer><img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt = "Thumbs up"> </footer>
+  </div>
+  </div>
+</div>
 </div> 
+
   <div class ="container-footer"></div>
-
-    <!--
-    <div hidden= true class="flex">
-        <button class="button">Addpage</button>
-        <button class="button">Button</button>
-
-    </div>-->
   </body>
 </html>

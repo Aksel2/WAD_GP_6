@@ -8,31 +8,33 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <header class="header">
-    <button class="nav" href="index.html" >Home</button>
+  <header class="header border-shadowed">
+    <div class="nav">
+      <button type="button" class="button" onClick="document.location.href='index.html'">Home</button>
+    </div>
     <a class="logo">
-      <img src="../res/images/me.png" width="50"height="50">
+      <img src="../res/images/me.png" width="50" height="50">
     </a>
   </header>
   <form>
     <div class="form">
-      <div class="window-addpost">
-        <form action="">
+      <div class="window-addpost border-shadowed">
           <div class="input-addpost">
             <p>Post<br />body</p>
-            <textarea rows="5" cols="33">textarea</textarea>
+            <textarea rows="5" cols="33" required="required">textarea</textarea>
           </div>
           <div class="file-addpost">
             <p>Select<br />file</p>
-            <input type="file" id="" name="">
+            <input type="file" id="upload">
           </div>
-          <div>
-            <form method="POST" action="index.html">
+            <!-- <form method="POST" action="index.html">
               <input type="submit" value="Create post" />
-            </form>
+              <button type="submit" class="button" required="required">Log in</button>
+            </form> -->
+          <button type="submit" class="button" required="required">Create Post</button>
           </div>
-        </form>
       </div>
     </div>
+  <footer class="footer-end"></footer>
 </body>
 </html>

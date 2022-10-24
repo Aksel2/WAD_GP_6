@@ -1,9 +1,58 @@
 [
   {
     "userId": 1,
-    "fullName": "Peter",
-    "email": "@.gmail.com",
-    "password": "126",
-    "picture": "someurl.com"
+    "fullName": "Peter Smith",
+    "email": "peter.smith@gmail.com",
+    "password": "peter1",
+    "picture": "https://www.pngkit.com/png/full/88-885453_login-white-on-clear-user-icon.png"
+  }
+  {
+    "userId": 2,
+    "fullName": "Mihkel Maadleja",
+    "email": "mihkel74@hot.ee",
+    "password": "parool123",
+    "picture": "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/fd/45/c3/fd45c333-e0fc-7e62-a88e-e82c38f87578/source/256x256bb.jpg"
+  }
+  {
+    "userId": 3,
+    "fullName": "Jane Doe",
+    "email": "jane.doe@outlook.com",
+    "password": "jan3do3",
+    "picture": "https://i.pinimg.com/474x/0a/91/1c/0a911c7230b788923bf253804b854a31.jpg"
+  }
+  {
+    "userId": 4,
+    "fullName": "John Doe",
+    "email": "john.doe@outlook.com",
+    "password": "johndo3",
+    "picture": "https://news.artnet.com/app/news-upload/2015/11/1133593_942736-256x256.jpg"
+  }
+  {
+    "userId": 5,
+    "fullName": "Jaanus Juurikas",
+    "email": "juurikajaanus@neti.ee",
+    "password": "juurikas234",
+    "picture": "https://www.thehansindia.com/images/authorplaceholder.jpg"
+  }
+  {
+    "userId": 6,
+    "fullName": "Michelle Obama",
+    "email": "michelleobama@gov.com",
+    "password": "michelle2024",
+    "picture": "https://wp.dailybruin.com/images/2019/03/web.ns_.michelleobama.courtesy-128x128.jpg"
+  }
+  {
+    "userId": 7,
+    "fullName": "Mary Williams",
+    "email": "mary.williams@aol.com",
+    "password": "password123",
+    "picture": "https://i.pinimg.com/736x/ff/21/c9/ff21c94cf3bee40fd36ef911420106ca.jpg"
+  }
+  {
+    "userId": 8,
+    "fullName": "Tiit Sei",
+    "email": "tiitsei@gmail.com",
+    "password": "dj123",
+    "picture": "https://bucketdata.blob.core.windows.net/s3data/starclinchwpimages/starclinch1/wp-content/uploads/2019/02/dj-chetas-profile.jpg"
   }
 ]

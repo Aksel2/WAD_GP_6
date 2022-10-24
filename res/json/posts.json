@@ -1,0 +1,19 @@
+[
+    {
+        "userId": 1,
+        "post": {
+        "img": "../res/images/profile2.png",
+        "date": "03/10/2022",
+        "message" : "Käisin Tartu raekojas!"
+        }
+    },
+    {
+        "userId": 1,
+        "post": {
+        "img": null,
+        "date": "03/10/2022",
+        "message" : "Käisin Tartu raekojas!"
+        }
+    },
+
+]

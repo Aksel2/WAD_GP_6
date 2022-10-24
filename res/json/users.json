@@ -1,0 +1,9 @@
+[
+  {
+    "userId": 1,
+    "fullName": "Peter",
+    "email": "@.gmail.com",
+    "password": "126",
+    "picture": "someurl.com"
+  }
+]

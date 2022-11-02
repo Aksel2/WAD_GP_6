@@ -1,3 +1,7 @@
+// Global variables for other functions in this class.
+usersJson = null
+let isDropdownMenuDisplayed = false;
+let isUserInfoGenerated = false;
 
 // Formats DD/MM/YYYY to DD monthName, YYYY
 function dateFormatter(date){
@@ -14,7 +18,6 @@ function dateFormatter(date){
   return day + ' ' + month + ', ' + year;
 }
 
-
 window.onload = function () {
     
   // Fetching post and user data
@@ -27,7 +30,7 @@ window.onload = function () {
         ]);
         // Reads the JSONs into constants
         const [users, posts] = await Promise.all(responsesJSON.map(r => r.json()));
-      
+        usersJson = users 
         for (post of posts){
           const div_container = document.createElement("div"); // This contains the whole post including header and footer.
           const div_card = document.createElement("div"); // This contains the post info
@@ -107,3 +110,57 @@ window.onload = function () {
     
     fetchData();
 };
+
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  let dropdown = document.getElementById("myDropdown");
+
+  if (isDropdownMenuDisplayed) {
+    dropdown.style.display = "none";
+    isDropdownMenuDisplayed = false;
+    return;
+  }
+
+  dropdown.style.display = "flex";
+  isDropdownMenuDisplayed = true;
+
+  if (isUserInfoGenerated) return;
+
+  let max = usersJson.length;
+  let randomNumber = Math.floor(Math.random() * (max - 0 + 1) + 0);
+
+  let user = usersJson[randomNumber];
+  let fullName = user["fullName"];
+  let email = user["email"];
+
+  const spanName = document.createElement("span");
+  const spanEmail = document.createElement("span");
+  spanName.innerHTML = fullName;
+  spanEmail.innerHTML = email;
+
+  const logout = document.createElement("a");
+  logout.innerHTML = "logout";
+  logout.href = "./login.html";
+
+  dropdown.appendChild(spanName);
+  dropdown.appendChild(spanEmail);
+  dropdown.appendChild(logout);
+
+  isUserInfoGenerated = true;
+}

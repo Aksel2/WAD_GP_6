@@ -52,11 +52,11 @@
   }
   
 .sidebar-left {
-  left: 1%;
+  left: 0.65%;
   }
 
   .sidebar-right {
-  right: 1%;
+  right: 0.65%;
   }
 
   .sidebar-pos{
@@ -171,7 +171,6 @@ span, a {
 }
 
 .header {
-  width: 100%;
   top: 0;
   right: 0px;
   left: 0px;
@@ -180,7 +179,7 @@ span, a {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1em;
+  padding: 5px 10px;
   position: fixed;
   z-index: 2;
 
@@ -243,6 +242,7 @@ div form {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-top: 25px;
   padding: 1em;
   height: 400px;
   flex-grow: 0.3;
@@ -250,7 +250,7 @@ div form {
 
 .window-addpost {
   height: 300px;
-  flex-grow: 0.2;
+  margin-top: 0px;
 }
 
 .window, .window-addpost > * {
@@ -339,7 +339,6 @@ textarea {
   color: gray;
 }
 
-/* Styling for the file input button - same as*/
 #upload::-webkit-file-upload-button {
   width: fit-content;
   height: 2em;
@@ -377,9 +376,9 @@ textarea {
 .dropdown-content {
   display: none;
   position: absolute;
-  right: 0px;
+  top: 60px;
+  right: 10px;
   min-width: 160px;
-  display: flex;
   flex-direction: column;
 
   background-color: #f1f1f1;
@@ -388,11 +387,13 @@ textarea {
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content span, a{
   color: black;
-  padding: 12px 16px;
+  padding: 12px 10px;
+  /* width: 100%; */
   text-decoration: none;
   display: block;
+  margin-right: 0em;
 }
 
 /* Change color of dropdown links on hover */
@@ -402,5 +403,6 @@ textarea {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
-  display: block;
+  display: flex;
+  background-color: red;
 }

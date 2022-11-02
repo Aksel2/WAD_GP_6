@@ -25,6 +25,7 @@ window.onload = function () {
       try {
         const responsesJSON = await Promise.all([
             //fetch('https://myjson.dit.upm.es/api/bins/3k72?fbclid=IwAR28FflHyklfamoQsqEn3eOWRJBVX-cry0aWdx5DrhIn3Mzj-4sR3gnbo2g'),
+            //fetch("http://myjson.dit.upm.es/api/bins/iz4u"),
             fetch('../res/json/users.json'),
             fetch('../res/json/posts.json')
         ]);

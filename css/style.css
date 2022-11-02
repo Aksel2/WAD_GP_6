@@ -1,7 +1,7 @@
 :root {
 
   --sidebarHeight: 75%;
-  --backcolor: lightgray;
+  --backcolor: #a2ccea;
 }
 
 * {
@@ -110,7 +110,7 @@
 }
 
 .card {
-  background: lightgray;
+  background: var(--backcolor);
   width: 700px;
   height: auto;
   margin: 10px;
@@ -129,6 +129,7 @@
 }
 
 .card-heading img {
+  border-radius: 10%;
   vertical-align: middle;
   width: 60px;
   height: 40px;

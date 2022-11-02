@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="../js/index.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
     <link rel="stylesheet" href="../css/style.css" />
     <title>Home</title>
   </head>
   <body>
     <header class="header border-shadowed">
-
-      <div class = "nav">
+      <div class="nav">
         <form action="index.html" method="get">
           <button class="button">Home</button>
         </form>
@@ -20,246 +20,198 @@
         </form>
       </div>
 
-      <a class="logo">
-        <img src="../res/images/me.png" width="50" height="50" alt="My picture"
-      /></a>
+      <div class="dropdown" onClick="myFunction()">
+        <a class="logo"> <img src="../res/images/me.png" width="50" height="50" alt="My picture" /></a>
+        <div id ="myDropdown" class="dropdown-content">
+          <p>nimi</p>
+          <p>email</p>
+        </div>
+      </div>
     </header>
 
-    <div class="sidebar-pos">
+    <!-- <div class="sidebar-pos">
       <div style="position: fixed; right: 15.6%">
-        <div class="sidebar-right"></div>
+        <div class="sidebar"></div>
+      </div>
+    </div> -->
+    <div class="sidebar sidebar-left"></div>
+    <div class="sidebar sidebar-right"></div>
+    <div class="container">
+      <div class="card">
+        <div class="card-heading">
+          <div class="box">
+            <img src="../res/images/profile2.png" alt="profile picture" />
+            <div class="right">
+              <span>3 October, 2022</span>
+            </div>
+          </div>
+        </div>
+        <img src="../res/images/raekoda.JPG" alt="Image of Tartu raekoda" />
+        <p>Käisin Tartu raekojas!</p>
+        <div class="card-footer">
+          <footer>
+            <img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt="Thumbs up" />
+          </footer>
+        </div>
       </div>
     </div>
-    <div class="sidebar-left"></div>
-      <div class="container">
-        <div class="card">
-          <div class="card-heading">
-            <div class="box">
-              <img src="../res/images/profile2.png" alt="profile picture" />
-              <div class="right">
-                <span>3 October, 2022</span>
-              </div>
-            </div>
-          </div>
-          <img src="../res/images/raekoda.JPG" alt="Image of Tartu raekoda" />
-          <p>Käisin Tartu raekojas!</p>
-          <div class="card-footer">
-            <footer>
-              <img
-                src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg"
-                alt="Thumbs up"
-              />
-            </footer>
-          </div>
-        </div>
-      </div>
 
-      <div class="container">
-        <div class="card border-shadowed">
-          <div class="card-heading">
-            <div class="box">
-              <img
-                src="https://images.pexels.com/photos/3824771/pexels-photo-3824771.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                alt="profile picture"
-              />
-              <div class="right">
-                <span>2 October, 2022</span>
-              </div>
+    <div class="container">
+      <div class="card border-shadowed">
+        <div class="card-heading">
+          <div class="box">
+            <img
+              src="https://images.pexels.com/photos/3824771/pexels-photo-3824771.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              alt="profile picture"
+            />
+            <div class="right">
+              <span>2 October, 2022</span>
             </div>
           </div>
-          <img
-            src="https://c.tenor.com/6Pg-JQo6y2YAAAAC/klohe-klohecreation.gif"
-            alt="Gif of Newton's cradle"
-          />
-          <p>Look at this moving picture!</p>
-          <div class="card-footer">
-            <footer>
-              <img
-                src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg"
-                alt="Thumbs up"
-              />
-            </footer>
-          </div>
+        </div>
+        <img src="https://c.tenor.com/6Pg-JQo6y2YAAAAC/klohe-klohecreation.gif" alt="Gif of Newton's cradle" />
+        <p>Look at this moving picture!</p>
+        <div class="card-footer">
+          <footer>
+            <img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt="Thumbs up" />
+          </footer>
         </div>
       </div>
+    </div>
 
-      <div class="container">
-        <div class="card">
-          <div class="card-heading">
-            <div class="box">
-              <img src="../res/images/profile2.png" alt="profile picture" />
-              <div class="right">
-                <span>29 September, 2022</span>
-              </div>
+    <div class="container">
+      <div class="card">
+        <div class="card-heading">
+          <div class="box">
+            <img src="../res/images/profile2.png" alt="profile picture" />
+            <div class="right">
+              <span>29 September, 2022</span>
             </div>
           </div>
-          <p>
-            According to all known laws of aviation, there is no way a bee
-            should be able to fly. Its wings are too small to get its fat little
-            body off the ground. The bee, of course, flies anyway because bees
-            don't care what humans think is impossible. Yellow, black. Yellow,
-            black. Yellow, black. Yellow, black. Ooh, black and yellow! Let's
-            shake it up a little. Barry! Breakfast is ready! Ooming! Hang on a
-            second. Hello? - Barry? - Adam? - Oan you believe this is happening?
-            - I can't. I'll pick you up
-          </p>
-          <div class="card-footer">
-            <footer>
-              <img
-                src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg"
-                alt="Thumbs up"
-              />
-            </footer>
-          </div>
+        </div>
+        <p>
+          According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its
+          fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is
+          impossible. Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and yellow! Let's shake it up a
+          little. Barry! Breakfast is ready! Ooming! Hang on a second. Hello? - Barry? - Adam? - Oan you believe this is
+          happening? - I can't. I'll pick you up
+        </p>
+        <div class="card-footer">
+          <footer>
+            <img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt="Thumbs up" />
+          </footer>
         </div>
       </div>
+    </div>
 
-      <div class="container">
-        <div class="card">
-          <div class="card-heading">
-            <div class="box">
-              <img
-                src="https://sisu.ut.ee/sites/default/files/japaneseeconomy/files/uni_of_tartu.png"
-                alt="profile picture"
-              />
-              <div class="right">
-                <span>28 September, 2022</span>
-              </div>
+    <div class="container">
+      <div class="card">
+        <div class="card-heading">
+          <div class="box">
+            <img src="https://sisu.ut.ee/sites/default/files/japaneseeconomy/files/uni_of_tartu.png" alt="profile picture" />
+            <div class="right">
+              <span>28 September, 2022</span>
             </div>
           </div>
-          <img
-            src="https://miro.medium.com/max/1200/1*5ZLci3SuR0zM_QlZOADv8Q.jpeg"
-            alt="Graph of program time complexities"
-          />
-          <p>There is nothing faster than n²! Change my mind.</p>
-          <div class="card-footer">
-            <footer>
-              <img
-                src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg"
-                alt="Thumbs up"
-              />
-            </footer>
-          </div>
+        </div>
+        <img src="https://miro.medium.com/max/1200/1*5ZLci3SuR0zM_QlZOADv8Q.jpeg" alt="Graph of program time complexities" />
+        <p>There is nothing faster than n²! Change my mind.</p>
+        <div class="card-footer">
+          <footer>
+            <img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt="Thumbs up" />
+          </footer>
         </div>
       </div>
+    </div>
 
-      <div class="container">
-        <div class="card">
-          <div class="card-heading">
-            <div class="box">
-              <img src="../res/images/pic3.png" alt="profile picture" />
-              <div class="right">
-                <span>1 September, 2022</span>
-              </div>
+    <div class="container">
+      <div class="card">
+        <div class="card-heading">
+          <div class="box">
+            <img src="../res/images/pic3.png" alt="profile picture" />
+            <div class="right">
+              <span>1 September, 2022</span>
             </div>
           </div>
-          <img
-            src="https://i.insider.com/51d492b8ecad04093700000b?width=800&format=jpeg"
-            alt="USA astronaut on the Moon"
-          />
-          <p>
-            The moon landing is physically impossible to achieve given the
-            supposed time constraints. Apparently Apollo 11 took 8 days and 3
-            hours to get to the moon. That’s 195 hours. The moon is 238,900
-            miles away from earth. So imagine the speed they needed to achieve
-            to get to the moon in the first place. When I drive to San Diego
-            from Las Vegas, it takes me about 5 hours. In those 5 hours I travel
-            a total of 332 miles. That averages out to about 66.4 mph. But if I
-            were to take a standard car and try to travel to the moon myself (a
-            distance of 238,900 miles) it would take an incredible amount of
-            time to get to the moon. Assuming I travel at 66.4 miles per hour to
-            the moon from a car, it would take 3600 hours. 150 days. We didn’t
-            have the fuel technology for a car to last that long in space. For
-            us to reach the moon in a supposed “8 days and 3 hours” we’d have to
-            travel 1225 mph. The fastest we’ve ever been able to reach in a car
-            is in the 2005 Bugatti Veyron EB 16.4 which only had a top speed of
-            253.81 mph. When you factor in air resistance it would take even
-            longer to get there. Plus no car is capable of retaining oxygen for
-            that long. When the astronauts would’ve got out of the spaceship,
-            they’d die. Humans need oxygen to breathe. Plus I don’t even know
-            how you would be able to get more fuel out there since they don’t
-            have gas stations on the moon. An obvious fuel deficiency,
-            inaccurate length of travel time, and the biological facts of humans
-            makes the moon landing clearly impossible.
-          </p>
-          <div class="card-footer">
-            <footer>
-              <img
-                src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg"
-                alt="Thumbs up"
-              />
-            </footer>
-          </div>
+        </div>
+        <img src="https://i.insider.com/51d492b8ecad04093700000b?width=800&format=jpeg" alt="USA astronaut on the Moon" />
+        <p>
+          The moon landing is physically impossible to achieve given the supposed time constraints. Apparently Apollo 11 took 8
+          days and 3 hours to get to the moon. That’s 195 hours. The moon is 238,900 miles away from earth. So imagine the speed
+          they needed to achieve to get to the moon in the first place. When I drive to San Diego from Las Vegas, it takes me
+          about 5 hours. In those 5 hours I travel a total of 332 miles. That averages out to about 66.4 mph. But if I were to
+          take a standard car and try to travel to the moon myself (a distance of 238,900 miles) it would take an incredible
+          amount of time to get to the moon. Assuming I travel at 66.4 miles per hour to the moon from a car, it would take 3600
+          hours. 150 days. We didn’t have the fuel technology for a car to last that long in space. For us to reach the moon in a
+          supposed “8 days and 3 hours” we’d have to travel 1225 mph. The fastest we’ve ever been able to reach in a car is in the
+          2005 Bugatti Veyron EB 16.4 which only had a top speed of 253.81 mph. When you factor in air resistance it would take
+          even longer to get there. Plus no car is capable of retaining oxygen for that long. When the astronauts would’ve got out
+          of the spaceship, they’d die. Humans need oxygen to breathe. Plus I don’t even know how you would be able to get more
+          fuel out there since they don’t have gas stations on the moon. An obvious fuel deficiency, inaccurate length of travel
+          time, and the biological facts of humans makes the moon landing clearly impossible.
+        </p>
+        <div class="card-footer">
+          <footer>
+            <img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt="Thumbs up" />
+          </footer>
         </div>
       </div>
+    </div>
 
-      <div class="container">
-        <div class="card">
-          <div class="card-heading">
-            <div class="box">
-              <img src="../res/images/pic3.png" alt="profile picture" />
-              <div class="right">
-                <span>30 August, 2022</span>
-              </div>
+    <div class="container">
+      <div class="card">
+        <div class="card-heading">
+          <div class="box">
+            <img src="../res/images/pic3.png" alt="profile picture" />
+            <div class="right">
+              <span>30 August, 2022</span>
             </div>
           </div>
-          <p>
-            😀 😃 😄 😁 😆 😅 😂 🤣😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝
-            😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁☹️ 😣 😖 😫 😩 🥺 😢 😭
-            😮‍💨 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😶‍🌫️ 😐 😑
-            😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 😵‍💫 🤐 🥴 🤢 🤮
-          </p>
-          <div class="card-footer">
-            <footer>
-              <img
-                src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg"
-                alt="Thumbs up"
-              />
-            </footer>
-          </div>
+        </div>
+        <p>
+          😀 😃 😄 😁 😆 😅 😂 🤣😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁☹️ 😣 😖
+          😫 😩 🥺 😢 😭 😮‍💨 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😶‍🌫️ 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵
+          😵‍💫 🤐 🥴 🤢 🤮
+        </p>
+        <div class="card-footer">
+          <footer>
+            <img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt="Thumbs up" />
+          </footer>
         </div>
       </div>
+    </div>
 
-      <div class="container">
-        <div class="card">
-          <div class="card-heading">
-            <div class="box">
-              <img
-                src="https://seeklogo.com/images/T/tartu-ulikool-university-tartuensis-logo-327A474B2A-seeklogo.com.png"
-                alt="profile picture"
-              />
-              <div class="right">
-                <span>30 August, 2022</span>
-              </div>
+    <div class="container">
+      <div class="card">
+        <div class="card-heading">
+          <div class="box">
+            <img
+              src="https://seeklogo.com/images/T/tartu-ulikool-university-tartuensis-logo-327A474B2A-seeklogo.com.png"
+              alt="profile picture"
+            />
+            <div class="right">
+              <span>30 August, 2022</span>
             </div>
           </div>
-          <img
-            src="https://ut.ee/sites/default/files/styles/facebook/public/migrate/news/foto_andres_tennus.jpg?itok=yx4fkIu"
-            alt="Tartu Ülikooli peahoone"
-          />
-          <p>
-            Tartu Ülikool (lühend TÜ) on vanim ja suurim Eestis tegutsev ülikool
-            ning ühtlasi Baltimaade ainus ülikool, mis kuulub 1,2% maailma
-            parimate sekka. Tartu ülikooli asutamiseks loetakse aastat 1632, mil
-            Tartus avati Academia Gustaviana. Ülikooli ajaloos on eri perioode
-            ja mitu tegevuse katkemist. Eestikeelse ülikoolina alustati tööd
-            1919. aastal. Aastail 1940–1941 ja 1944–1989 kandis ülikool nime
-            Tartu Riiklik Ülikool (lühend TRÜ).
-          </p>
-          <div class="card-footer">
-            <footer>
-              <img
-                src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg"
-                alt="Thumbs up"
-              />
-            </footer>
-          </div>
+        </div>
+        <img
+          src="https://ut.ee/sites/default/files/styles/facebook/public/migrate/news/foto_andres_tennus.jpg?itok=yx4fkIu"
+          alt="Tartu Ülikooli peahoone"
+        />
+        <p>
+          Tartu Ülikool (lühend TÜ) on vanim ja suurim Eestis tegutsev ülikool ning ühtlasi Baltimaade ainus ülikool, mis kuulub
+          1,2% maailma parimate sekka. Tartu ülikooli asutamiseks loetakse aastat 1632, mil Tartus avati Academia Gustaviana.
+          Ülikooli ajaloos on eri perioode ja mitu tegevuse katkemist. Eestikeelse ülikoolina alustati tööd 1919. aastal. Aastail
+          1940–1941 ja 1944–1989 kandis ülikool nime Tartu Riiklik Ülikool (lühend TRÜ).
+        </p>
+        <div class="card-footer">
+          <footer>
+            <img src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg" alt="Thumbs up" />
+          </footer>
         </div>
       </div>
-   
+    </div>
 
     <div class="container-footer"></div>
   </body>
-  
-
 </html>

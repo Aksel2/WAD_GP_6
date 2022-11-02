@@ -63,28 +63,3 @@ window.onload = function () {
         console.log("Hello");
     });
 };
-/*
-<div class="container">
-        <div class="card">
-          <div class="card-heading">
-            <div class="box">
-              <img src="../res/images/profile2.png" alt="profile picture" />
-              <div class="right">
-                <span>3 October, 2022</span>
-              </div>
-            </div>
-          </div>
-          <img src="../res/images/raekoda.JPG" alt="Image of Tartu raekoda" />
-          <p>Käisin Tartu raekojas!</p>
-          <div class="card-footer">
-            <footer>
-              <img
-                src="https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg"
-                alt="Thumbs up"
-              />
-            </footer>
-          </div>
-        </div>
-      </div>
-
-*/

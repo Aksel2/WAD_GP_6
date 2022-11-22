@@ -1,22 +1,30 @@
 <template>
-  <div class="container" v-for="post in posts" :key="post.userId">
-    <div class="card">
-      <div class="card-heading">
-        <div class="box">
-          <img v-bind:src="users[post.userId - 1].picture" />
-          <div class="right">
-            <span>{{ post.post.date }}</span>
+  <div id="posts">
+    <div class="container">
+      <div class="card">
+        <div class="card-heading">
+          <div class="box">
+            <div v-if="users[userId-1]">
+              <img v-bind:src="users[userId-1].picture" />
+            </div>
+            <div class="right">
+              <span>{{ post.date }}</span>
+            </div>
           </div>
         </div>
-      </div>
-      <img v-bind:src="post.post.img" />
-      <p>{{ post.post.message }}</p>
-      <div class="card-footer">
-        <img v-bind:src="'https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg'" />
+        <img v-bind:src="post.img" />
+        <p>{{ post.message }}</p>
+        <div class="card-footer">
+          <img
+            v-bind:src="'https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg'"
+            v-on:click="pass"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
+      
 
 <script>
 export default {
@@ -25,13 +33,11 @@ export default {
     return {};
   },
   computed: {
-    posts() {
-      return this.$store.state.posts;
-    },
     users() {
       return this.$store.state.users;
     },
   },
+  props: ["post", "userId"],
 };
 </script>
 
@@ -52,7 +58,7 @@ export default {
 
 .container-footer {
   display: flex;
-  background: #a2ccea;;
+  background: #a2ccea;
   width: 100%;
   border-radius: 10px;
   height: 50px;
@@ -66,7 +72,7 @@ export default {
 }
 
 .card {
-  background: #a2ccea;;
+  background: #a2ccea;
   width: 700px;
   height: auto;
   margin: 10px;

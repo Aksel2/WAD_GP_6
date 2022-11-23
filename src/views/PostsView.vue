@@ -44,11 +44,12 @@ export default {
 
 <style scoped>
 
-.resetButton button{
-  font-family: 'Monospace',  Monaco;
-  background-color:  #8CB2E4;
-  width: 7%;
-  height: 30px;
+.resetButton button {
+  font-family: "Monospace", Monaco;
+  background-color: #3fb984;
+  width: 11%;
+  height: 40px;
   border-radius: 15px;
 }
+
 </style>

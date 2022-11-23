@@ -171,6 +171,7 @@ img {
 .right {
   width: 100%;
   text-align: right;
+  color: black;
 }
 
 .box {

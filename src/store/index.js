@@ -1,14 +1,30 @@
 import { createStore } from "vuex";
-import postinfo from "@/assets/posts.json"
-import userinfo from "@/assets/users.json"
+import postinfo from "@/assets/posts.json";
+import userinfo from "@/assets/users.json";
 
 export default createStore({
   strict: true,
   state: {
     posts: postinfo,
-    users: userinfo
+    users: userinfo,
   },
+
   getters: {},
-  mutations: {},
-  actions: {},
+  mutations: {
+    IncreaseLike: (state, { id }) => {
+      state.posts.forEach((postData) => {
+        if (postData.postId === id) {
+          postData.post.like += 1;
+        }
+      });
+    },
+  },
+
+  actions: {
+    IncreaseLikeAct: (act, payload) => {
+      setTimeout(function () {
+        act.commit("IncreaseLike", payload); // Vuex uses payload as second argument to pass data.
+      }, 1000);
+    },
+  },
 });

@@ -1,11 +1,11 @@
 <template>
   <div id="posts">
     <div class="container">
-      <div class="card">
+      <div class="card border-shadowed">
         <div class="card-heading">
           <div class="box">
-            <div v-if="users[userId-1]">
-              <img v-bind:src="users[userId-1].picture" />
+            <div v-if="users[userId - 1]">
+              <img v-bind:src="users[userId - 1].picture" />
             </div>
             <div class="right">
               <span>{{ post.date }}</span>
@@ -15,32 +15,42 @@
         <img v-bind:src="post.img" />
         <p>{{ post.message }}</p>
         <div class="card-footer">
-          <img
-            v-bind:src="'https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg'"
-            v-on:click="pass"
-          />
+          <button class="invisible-button" v-on:click="IncreaseLike">
+            <img v-bind:src="'https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg'" v-on:click="pass" />
+          </button>
+          <div class="likebox">
+            {{ post.like}}
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-      
 
 <script>
 export default {
   name: "PostComp",
   data: function () {
-    return {};
+    return {
+      postId: this.$.vnode.key
+    };
   },
+
   computed: {
     users() {
       return this.$store.state.users;
     },
   },
+
   props: ["post", "userId"],
+
+  methods: {
+    IncreaseLike: function () {
+      this.$store.dispatch("IncreaseLikeAct", {id: this.postId});
+    },
+  },
 };
 </script>
-
 
 <style scoped>
 #posts {
@@ -51,14 +61,13 @@ export default {
 .container {
   display: flex;
   justify-content: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   margin-bottom: 10px;
 }
 
 .container-footer {
   display: flex;
-  background: #a2ccea;
+  background: #ccc5b9;
   width: 100%;
   border-radius: 10px;
   height: 50px;
@@ -72,7 +81,7 @@ export default {
 }
 
 .card {
-  background: #a2ccea;
+  background: #ccc5b9;
   width: 700px;
   height: auto;
   margin: 10px;
@@ -102,6 +111,8 @@ export default {
 }
 
 .card-footer {
+  display: flex;
+  align-items: center;
   padding-bottom: 7px;
 }
 .card-footer img {
@@ -116,6 +127,19 @@ img {
   display: flex;
 }
 
+.likebox {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.invisible-button {
+  background: transparent;
+  border: none !important;
+  font-size: 0;
+}
 .right {
   width: 100%;
   text-align: right;
@@ -124,5 +148,9 @@ img {
 .box {
   display: flex;
   align-items: center;
+}
+
+.border-shadowed {
+  border: 1px solid #646174;
 }
 </style>

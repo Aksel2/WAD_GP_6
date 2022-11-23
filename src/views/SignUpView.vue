@@ -1,7 +1,7 @@
 <template>
   <div><Header/> </div>
   <div class="sign-up">
-    <h2>Sign Up View</h2>
+    <h2>Sign Up</h2>
     <form @sumbit.prevent="index.html">
       <div class="form">
         <div class="window border-shadowed">
@@ -16,7 +16,7 @@
         </div>
       </div>
     </form>
-    <p>Email: {{ email }} | password: {{ password }}</p>
+    <!-- <p>Email: {{ email }} | password: {{ password }}</p> -->
     <div><Footer/></div>
   </div>
 </template>
@@ -63,6 +63,7 @@ export default {
 </script>
 
 <style scoped>
+
 div form {
   display: flex;
   justify-content: center;
@@ -70,8 +71,9 @@ div form {
 
 .window {
   width: 400px;
+  margin-top: 1000px;
   background-color: #ccc5b9;
-  /* border-radius: 5px; */
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,13 +81,9 @@ div form {
   margin-top: 25px;
   padding: 1em;
   height: 400px;
-  /* flex-grow: 0.3; */
-  /* flex-shrink: 0.3; */
 }
 .border-shadowed {
   border: 1px solid #646174;
-  /* border-radius: 5px; */
-  /* box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.75); */
 }
 
 .button,
@@ -104,4 +102,5 @@ button:hover {
   background: #333;
   color: #fff;
 }
+
 </style>

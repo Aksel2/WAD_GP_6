@@ -24,7 +24,7 @@ export default {
 }
 
 .header1 a:hover{
-  background:#a2ccea;;
+  background: #b8a990;
   color: #333;
 }
 </style>

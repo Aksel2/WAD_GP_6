@@ -14,7 +14,11 @@ export default {
 
 <style>
 .footer1{
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  height: 100px;
   font-size: 15px;
   background-color: #ccc5b9;
 }

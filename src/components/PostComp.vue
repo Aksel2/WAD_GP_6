@@ -80,6 +80,7 @@ export default {
 
 <style scoped>
 #posts {
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
 }

@@ -1,28 +1,36 @@
 <template>
-  <div><Header/> </div>
+  <div><Header /></div>
   <div class="sign-up">
-    <h2>Sign Up</h2>
     <form @sumbit.prevent="index.html">
       <div class="form">
         <div class="window border-shadowed">
-          <strong>Welcome to PostIt</strong>
-          <a href="">Create an account</a>
-          <p><span>or</span> <span>Please log in</span></p>
-          <input v-model="email" type="text" id="email" placeholder="Email" required="required" />
-          <input v-model="password" type="text" id="password" placeholder="Password" required="required" />
+          <h2 class="heading">Sign Up</h2>
+          <strong>Welcome to PostIt!</strong>
+          <div class="input-field">
+            <span>Email</span>
+            <input v-model="email" type="text" id="email" placeholder="Email" required="required" />
+          </div>
+
+          <div class="input-field">
+            <span>Password</span>
+            <input v-model="password" type="text" id="password" placeholder="Password" required="required" />
+          </div>
+
           <div v-if="passwordError" class="error">{{ passwordError }}</div>
+          <!-- <router-link :is="passwordError == ''" :to="{ path: '/' }"> -->
           <button v-on:click="registerUser" type="submit" class="button" required="required">Sing Up</button>
-          <a href="">Forget password</a>
+          <!-- </router-link> -->
         </div>
       </div>
     </form>
     <!-- <p>Email: {{ email }} | password: {{ password }}</p> -->
-    <div><Footer/></div>
+    <div><Footer /></div>
   </div>
 </template>
+
 <script setup>
-  import Header from '../components/Header.vue';
-  import Footer from '../components/Footer.vue';
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
 </script>
 <script>
 export default {
@@ -52,9 +60,9 @@ export default {
           ? "Password must contain at least two lowercase letters "
           : !/[1-9]/.test(this.password)
           ? "Password must contain at least one numberic value "
-          : !/[A-Z]/.test(this.password[0]) 
+          : !/[A-Z]/.test(this.password[0])
           ? "Password must start with an uppercase letter"
-          : !/_/.test(this.password) 
+          : !/_/.test(this.password)
           ? "Password must contain the character '_' "
           : "";
     },
@@ -63,6 +71,12 @@ export default {
 </script>
 
 <style scoped>
+.heading {
+  margin-bottom: 0px;
+}
+.sign-up {
+  margin-top: 80px;
+}
 
 div form {
   display: flex;
@@ -86,6 +100,17 @@ div form {
   border: 1px solid #646174;
 }
 
+.input-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-field span {
+  text-align: justify;
+  padding-left: 1px;
+  margin-bottom: 5px;
+}
 .button,
 #upload::-webkit-file-upload-button {
   width: fit-content;
@@ -102,5 +127,4 @@ button:hover {
   background: #333;
   color: #fff;
 }
-
 </style>

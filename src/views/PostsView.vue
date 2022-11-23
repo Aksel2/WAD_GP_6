@@ -1,12 +1,18 @@
 <template>
-  <div><Header/></div>
-  <post-comp v-for="post in posts"  v-bind:key="post.postId" v-bind:post="post.post" v-bind:userId="post.userId" ></post-comp>
-  <div><Footer/></div>
+  <div><Header /></div>
+  <post-comp
+    v-for="post in posts"
+    v-bind:key="post.postId"
+    v-bind:post="post.post"
+    v-bind:userId="post.userId"
+  ></post-comp>
+  <button v-on:click="resetLikes">Reset likes</button>
+  <div><Footer /></div>
 </template>
 
 <script setup>
-  import Header from '../components/Header.vue';
-  import Footer from '../components/Footer.vue';
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
 </script>
 
 <script>
@@ -25,10 +31,14 @@ export default {
       return this.$store.state.users;
     },
   },
-  components: {PostComp},
-  methods: {},
-
+  components: { PostComp },
+  methods: {
+    resetLikes: function () {
+      this.$store.dispatch("resetLikesAct");
+    },
+  },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

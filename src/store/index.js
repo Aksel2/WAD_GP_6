@@ -9,6 +9,16 @@ export default createStore({
     users: userinfo
   },
   getters: {},
-  mutations: {},
-  actions: {},
+  mutations: {
+    resetLikes: state => {
+      state.posts.forEach(post => {
+          post.post.like = 0;
+      })
+  }
+  },
+  actions: {
+    resetLikesAct: act => {
+      act.commit("resetLikes")
+    }
+  },
 });

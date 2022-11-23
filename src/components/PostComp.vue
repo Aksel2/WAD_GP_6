@@ -13,7 +13,7 @@
           </div>
         </div>
         <img v-bind:src="post.img" />
-        <p>{{ post.message }}</p>
+        <p>{{ post.message }} {{post.like}}</p>
         <div class="card-footer">
           <img
             v-bind:src="'https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg'"

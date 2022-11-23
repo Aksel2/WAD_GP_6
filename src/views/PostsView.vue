@@ -6,7 +6,9 @@
     v-bind:post="post.post"
     v-bind:userId="post.userId"
   ></post-comp>
-  <button v-on:click="resetLikes">Reset likes</button>
+  <div class="resetButton">
+    <button v-on:click="resetLikes">Reset likes</button>
+  </div>
   <div><Footer /></div>
 </template>
 
@@ -41,4 +43,12 @@ export default {
 </script>
 
 <style scoped>
+
+.resetButton button{
+  font-family: 'Monospace',  Monaco;
+  background-color:  #8CB2E4;
+  width: 7%;
+  height: 30px;
+  border-radius: 15px;
+}
 </style>

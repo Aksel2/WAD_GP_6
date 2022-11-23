@@ -8,7 +8,7 @@
               <img v-bind:src="users[userId - 1].picture" />
             </div>
             <div class="right">
-              <span>{{ post.date }}</span>
+              <span>{{ dateFormatter(post.date) }}</span>
             </div>
           </div>
         </div>
@@ -16,10 +16,13 @@
         <p>{{ post.message }}</p>
         <div class="card-footer">
           <button class="invisible-button" v-on:click="IncreaseLike">
-            <img v-bind:src="'https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg'" v-on:click="pass" />
+            <img
+              v-bind:src="'https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg'"
+              v-on:click="pass"
+            />
           </button>
           <div class="likebox">
-            {{ post.like}}
+            {{ post.like }}
           </div>
         </div>
       </div>
@@ -32,7 +35,7 @@ export default {
   name: "PostComp",
   data: function () {
     return {
-      postId: this.$.vnode.key
+      postId: this.$.vnode.key,
     };
   },
 
@@ -45,8 +48,31 @@ export default {
   props: ["post", "userId"],
 
   methods: {
+    dateFormatter: function (date) {
+      let dateString = date;
+      let dateParts = dateString.split("/");
+      let dateObject = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
+      const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      const day = dateObject.getDate();
+      const month = monthNames[dateObject.getMonth()];
+      const year = dateObject.getFullYear();
+      return day + " " + month + ", " + year;
+    },
     IncreaseLike: function () {
-      this.$store.dispatch("IncreaseLikeAct", {id: this.postId});
+      this.$store.dispatch("IncreaseLikeAct", { id: this.postId });
     },
   },
 };
@@ -61,7 +87,8 @@ export default {
 .container {
   display: flex;
   justify-content: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   margin-bottom: 10px;
 }
 

@@ -1,6 +1,7 @@
 [
   {
     "userId": 1,
+    "postId": 1,
     "post": {
       "img": "https://miro.medium.com/max/1200/1*5ZLci3SuR0zM_QlZOADv8Q.jpeg",
       "date": "02/11/2021",
@@ -10,6 +11,7 @@
   },
   {
     "userId": 2,
+    "postId": 2,
     "post": {
       "img": "",
       "date": "01/11/2022",
@@ -20,6 +22,7 @@
 
   {
     "userId": 3,
+    "postId": 3,
     "post": {
       "img": "https://c.tenor.com/6Pg-JQo6y2YAAAAC/klohe-klohecreation.gif",
       "date": "31/10/2022",
@@ -30,6 +33,7 @@
 
   {
     "userId": 4,
+    "postId": 4,
     "post": {
       "img": "",
       "date": "28/10/2022",
@@ -40,6 +44,7 @@
 
   {
     "userId": 5,
+    "postId": 5,
     "post": {
       "img": "https://miro.medium.com/max/1200/1*5ZLci3SuR0zM_QlZOADv8Q.jpeg",
       "date": "24/10/2022",
@@ -50,6 +55,7 @@
 
   {
     "userId": 6,
+    "postId": 6,
     "post": {
       "img": "https://i.insider.com/51d492b8ecad04093700000b?width=800&format=jpeg",
       "date": "10/10/2022",
@@ -60,6 +66,7 @@
 
   {
     "userId": 7,
+    "postId": 7,
     "post": {
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Raccoon_in_Central_Park_%2835264%29.jpg/1200px-Raccoon_in_Central_Park_%2835264%29.jpg",
       "date": "05/10/2022",
@@ -70,6 +77,7 @@
 
   {
     "userId": 8,
+    "postId": 8,
     "post": {
       "img": "",
       "date": "13/09/2022",
@@ -79,6 +87,7 @@
   },
   {
     "userId": 7,
+    "postId": 9,
     "post": {
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Raccoon_in_Central_Park_%2835264%29.jpg/1200px-Raccoon_in_Central_Park_%2835264%29.jpg",
       "date": "05/10/2022",
@@ -88,6 +97,7 @@
   },
   {
     "userId": 7,
+    "postId": 10,
     "post": {
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Raccoon_in_Central_Park_%2835264%29.jpg/1200px-Raccoon_in_Central_Park_%2835264%29.jpg",
       "date": "05/10/2022",
@@ -96,12 +106,33 @@
     }
   },
   {
-    "userId": 7,
+    "userId": 5,
+    "postId": 11,
     "post": {
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Raccoon_in_Central_Park_%2835264%29.jpg/1200px-Raccoon_in_Central_Park_%2835264%29.jpg",
-      "date": "05/10/2022",
-      "message": "The raccoon, sometimes called the common raccoon to distinguish it from other species, is a mammal native to North America. It is the largest of the procyonid family, having a body length of 40 to 70 cm, and a body weight of 5 to 26 kg",
-      "like": 3
+      "img": "https://i.kym-cdn.com/photos/images/facebook/001/256/183/9d5.png",
+      "date": "01/09/2022",
+      "message": "😀 😃 😄 😁 😆 😅 😂 🤣😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁☹️ 😣 😖 😫 😩 🥺 😢 😭 😮‍💨 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😶‍🌫️ 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 😵‍💫 🤐 🥴 🤢 🤮",
+      "like": 51
+    }
+  },
+  {
+    "userId": 2,
+    "postId": 12,
+    "post": {
+      "img": "https://thumbs.gfycat.com/SeparateWhisperedBernesemountaindog-size_restricted.gif",
+      "date": "01/09/2022",
+      "message": "Hmm?",
+      "like": 0
+    }
+  },
+  {
+    "userId": 2,
+    "postId": 13,
+    "post": {
+      "img": "https://ut.ee/sites/default/files/styles/facebook/public/migrate/news/foto_andres_tennus.jpg?itok=yx4fkIu",
+      "date": "28/08/2022",
+      "message": "Tartu Ülikool (lühend TÜ) on vanim ja suurim Eestis tegutsev ülikool ning ühtlasi Baltimaade ainus ülikool, mis kuulub 1,2% maailma parimate sekka. Tartu ülikooli asutamiseks loetakse aastat 1632, mil Tartus avati Academia Gustaviana. Ülikooli ajaloos on eri perioode ja mitu tegevuse katkemist. Eestikeelse ülikoolina alustati tööd 1919. aastal. Aastail 1940–1941 ja 1944–1989 kandis ülikool nime Tartu Riiklik Ülikool (lühend TRÜ).",
+      "like": 16
     }
   }
 ]

@@ -1,6 +1,6 @@
 <template>
   <div><Header/></div>
-  <post-comp v-for="post in posts" v-bind:key="post.userId" v-bind:post="post.post" v-bind:userId="post.userId" ></post-comp>
+  <post-comp v-for="post in posts"  v-bind:key="post.postId" v-bind:post="post.post" v-bind:userId="post.userId" ></post-comp>
   <div><Footer/></div>
 </template>
 

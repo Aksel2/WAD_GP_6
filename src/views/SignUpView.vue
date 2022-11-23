@@ -1,4 +1,5 @@
 <template>
+  <div><Header/> </div>
   <div class="sign-up">
     <h2>Sign Up View</h2>
     <form @sumbit.prevent="index.html">
@@ -16,9 +17,13 @@
       </div>
     </form>
     <p>Email: {{ email }} | password: {{ password }}</p>
+    <div><Footer/></div>
   </div>
 </template>
-
+<script setup>
+  import Header from '../components/Header.vue';
+  import Footer from '../components/Footer.vue';
+</script>
 <script>
 export default {
   name: "SignUpView",

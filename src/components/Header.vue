@@ -1,13 +1,30 @@
 <template>
-  <div class="header"></div>
+<div class="header1">
+  <router-link to="/posts">Posts</router-link> 
+  <router-link to="/signUp">Sign up</router-link>
+</div>
 </template>
 
 <script>
 export default {
-  name: "header",
-  props: {},
+  name: 'header'
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style>
+.header1{
+  margin-top: 10px;
+}
+.header1 a{
+  color: black;
+  padding: 16px;
+  text-align: center;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+.header1 a:hover{
+  background:#a2ccea;;
+  color: #333;
+}
+</style>

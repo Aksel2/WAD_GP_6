@@ -1,6 +1,13 @@
 <template>
+  <div><Header/></div>
   <post-comp v-for="post in posts" v-bind:key="post.userId" v-bind:post="post.post" v-bind:userId="post.userId" ></post-comp>
+  <div><Footer/></div>
 </template>
+
+<script setup>
+  import Header from '../components/Header.vue';
+  import Footer from '../components/Footer.vue';
+</script>
 
 <script>
 import PostComp from "@/components/PostComp.vue";

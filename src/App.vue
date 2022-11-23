@@ -1,9 +1,4 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/posts">Posts</router-link> |
-    <router-link to="/signUp">Sign up</router-link>
-  </nav>
   <router-view/>
 </template>
 
@@ -15,7 +10,10 @@
   text-align: center;
   color: #2c3e50;
 }
-
+body{
+  padding:0;
+  margin:0;
+}
 nav {
   padding: 30px;
 }

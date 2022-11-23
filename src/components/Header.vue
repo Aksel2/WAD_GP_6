@@ -1,6 +1,6 @@
 <template>
 <div class="header1">
-  <router-link to="/posts">Posts</router-link> 
+  <router-link to="/">Posts</router-link> 
   <router-link to="/signUp">Sign up</router-link>
 </div>
 </template>

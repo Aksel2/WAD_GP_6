@@ -18,6 +18,12 @@ export default createStore({
         }
       });
     },
+
+    resetLikes: (state) => {
+      state.posts.forEach((post) => {
+        post.post.like = 0;
+      });
+    },
   },
 
   actions: {
@@ -25,6 +31,10 @@ export default createStore({
       setTimeout(function () {
         act.commit("IncreaseLike", payload); // Vuex uses payload as second argument to pass data.
       }, 1000);
+    },
+
+    resetLikesAct: (act) => {
+      act.commit("resetLikes");
     },
   },
 });

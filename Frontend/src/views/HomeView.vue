@@ -1,9 +1,9 @@
 <template>
   <div>
-     <Header/>
+    <HeaderBar />
   </div>
 </template>
 
 <script setup>
-  import Header from '../components/Header.vue';
+import HeaderBar from "../components/HeaderBar.vue";
 </script>

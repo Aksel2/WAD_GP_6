@@ -2,85 +2,72 @@
   {
     "id": 1,
     "date": "02/11/2021",
-    "message": "Käisin Tartu raekojas!",
-    "like": 5
+    "message": "Käisin Tartu raekojas!"
   },
   {
     "id": 2,
     "date": "01/11/2022",
-    "message": "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible. Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and yellow!",
-    "like": 22
+    "message": "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible. Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and yellow!"
   },
 
   {
     "id": 3,
     "date": "10/28/2022",
-    "message": "Look at this moving picture!",
-    "like": 33
+    "message": "Look at this moving picture!"
   },
 
   {
     "id": 4,
     "date": "10/27/2022",
-    "message": "Ja siis otsustasite, et sõidate talle autoga otsa? Ei, ärme tõlgenda seda niimoodi. Ma kindlasti ei sõitnud talle ohtlikult otsa. Ma lihtsalt ei saanud autost välja tulla ega midagi. Mis mul alternatiivid olid siis? ",
-    "like": 5
+    "message": "Ja siis otsustasite, et sõidate talle autoga otsa? Ei, ärme tõlgenda seda niimoodi. Ma kindlasti ei sõitnud talle ohtlikult otsa. Ma lihtsalt ei saanud autost välja tulla ega midagi. Mis mul alternatiivid olid siis? "
   },
 
   {
     "id": 5,
     "date": "10/24/2022",
-    "message": "There is nothing faster than n²! Change my mind.",
-    "like": 44
+    "message": "There is nothing faster than n²! Change my mind."
   },
 
   {
     "id": 6,
     "date": "10/10/2022",
-    "message": "The moon landing is physically impossible to achieve given the supposed time constraints. Apparently Apollo 11 took 8 days and 3 hours to get to the moon. That’s 195 hours. The moon is 238,900 miles away from earth. So imagine the speed they needed to achieve to get to the moon in the first place. When I drive to San Diego from Las Vegas, it takes me about 5 hours. In those 5 hours I travel a total of 332 miles. That averages out to about 66.4 mph. But if I were to take a standard car and try to travel to the moon myself (a distance of 238,900 miles) it would take an incredible amount of time to get to the moon. Assuming I travel at 66.4 miles per hour to the moon from a car, it would take 3600 hours. 150 days. We didn’t have the fuel technology for a car to last that long in space. For us to reach the moon in a supposed “8 days and 3 hours” we’d have to travel 1225 mph. The fastest we’ve ever been able to reach in a car is in the 2005 Bugatti Veyron EB 16.4 which only had a top speed of 253.81 mph. When you factor in air resistance it would take even longer to get there. Plus no car is capable of retaining oxygen for that long. When the astronauts would’ve got out of the spaceship, they’d die. Humans need oxygen to breathe. Plus I don’t even know how you would be able to get more fuel out there since they don’t have gas stations on the moon. An obvious fuel deficiency, inaccurate length of travel time, and the biological facts of humans makes the moon landing clearly impossible.",
-    "like": 111
+    "message": "The moon landing is physically impossible to achieve given the supposed time constraints. Apparently Apollo 11 took 8 days and 3 hours to get to the moon. That’s 195 hours. The moon is 238,900 miles away from earth. So imagine the speed they needed to achieve to get to the moon in the first place. When I drive to San Diego from Las Vegas, it takes me about 5 hours. In those 5 hours I travel a total of 332 miles. That averages out to about 66.4 mph. But if I were to take a standard car and try to travel to the moon myself (a distance of 238,900 miles) it would take an incredible amount of time to get to the moon. Assuming I travel at 66.4 miles per hour to the moon from a car, it would take 3600 hours. 150 days. We didn’t have the fuel technology for a car to last that long in space. For us to reach the moon in a supposed “8 days and 3 hours” we’d have to travel 1225 mph. The fastest we’ve ever been able to reach in a car is in the 2005 Bugatti Veyron EB 16.4 which only had a top speed of 253.81 mph. When you factor in air resistance it would take even longer to get there. Plus no car is capable of retaining oxygen for that long. When the astronauts would’ve got out of the spaceship, they’d die. Humans need oxygen to breathe. Plus I don’t even know how you would be able to get more fuel out there since they don’t have gas stations on the moon. An obvious fuel deficiency, inaccurate length of travel time, and the biological facts of humans makes the moon landing clearly impossible."
   },
 
   {
     "id": 7,
     "date": "05/10/2022",
-    "message": "The raccoon, sometimes called the common raccoon to distinguish it from other species, is a mammal native to North America. It is the largest of the procyonid family, having a body length of 40 to 70 cm, and a body weight of 5 to 26 kg",
-    "like": 3
+    "message": "The raccoon, sometimes called the common raccoon to distinguish it from other species, is a mammal native to North America. It is the largest of the procyonid family, having a body length of 40 to 70 cm, and a body weight of 5 to 26 kg"
   },
 
   {
     "id": 8,
     "date": "05/08/2022",
-    "message": "p",
-    "like": 5 
+    "message": "p"
   },
   {
     "id": 9,
     "date": "05/10/2022",
-    "message": "The raccoon, sometimes called the common raccoon to distinguish it from other species, is a mammal native to North America. It is the largest of the procyonid family, having a body length of 40 to 70 cm, and a body weight of 5 to 26 kg",
-    "like": 3
+    "message": "The raccoon, sometimes called the common raccoon to distinguish it from other species, is a mammal native to North America. It is the largest of the procyonid family, having a body length of 40 to 70 cm, and a body weight of 5 to 26 kg"
   },
   {
     "id": 10,
     "date": "05/10/2022",
-    "message": "The raccoon, sometimes called the common raccoon to distinguish it from other species, is a mammal native to North America. It is the largest of the procyonid family, having a body length of 40 to 70 cm, and a body weight of 5 to 26 kg",
-    "like": 3
+    "message": "The raccoon, sometimes called the common raccoon to distinguish it from other species, is a mammal native to North America. It is the largest of the procyonid family, having a body length of 40 to 70 cm, and a body weight of 5 to 26 kg"
   },
   {
     "id": 11,
     "date": "01/09/2022",
-    "message": "😀 😃 😄 😁 😆 😅 😂 🤣😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁☹️ 😣 😖 😫 😩 🥺 😢 😭 😮‍💨 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😶‍🌫️ 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 😵‍💫 🤐 🥴 🤢 🤮",
-    "like": 51
+    "message": "😀 😃 😄 😁 😆 😅 😂 🤣😊 😇 🙂 🙃 😉 😌 😍 🥰 😘 😗 😙 😚 😋 😛 😝 😜 🤪 🤨 🧐 🤓 😎 🤩 🥳 😏 😒 😞 😔 😟 😕 🙁☹️ 😣 😖 😫 😩 🥺 😢 😭 😮‍💨 😤 😠 😡 🤬 🤯 😳 🥵 🥶 😱 😨 😰 😥 😓 🤗 🤔 🤭 🤫 🤥 😶 😶‍🌫️ 😐 😑 😬 🙄 😯 😦 😧 😮 😲 🥱 😴 🤤 😪 😵 😵‍💫 🤐 🥴 🤢 🤮"
   },
   {
     "id": 12,
     "date": "01/09/2022",
-    "message": "Hmm?",
-    "like": 0
+    "message": "Hmm?"
   },
   {
     "id": 13,
     "date": "08/28/2022",
-    "message": "Tartu Ülikool (lühend TÜ) on vanim ja suurim Eestis tegutsev ülikool ning ühtlasi Baltimaade ainus ülikool, mis kuulub 1,2% maailma parimate sekka. Tartu ülikooli asutamiseks loetakse aastat 1632, mil Tartus avati Academia Gustaviana. Ülikooli ajaloos on eri perioode ja mitu tegevuse katkemist. Eestikeelse ülikoolina alustati tööd 1919. aastal. Aastail 1940–1941 ja 1944–1989 kandis ülikool nime Tartu Riiklik Ülikool (lühend TRÜ).",
-    "like": 16
+    "message": "Tartu Ülikool (lühend TÜ) on vanim ja suurim Eestis tegutsev ülikool ning ühtlasi Baltimaade ainus ülikool, mis kuulub 1,2% maailma parimate sekka. Tartu ülikooli asutamiseks loetakse aastat 1632, mil Tartus avati Academia Gustaviana. Ülikooli ajaloos on eri perioode ja mitu tegevuse katkemist. Eestikeelse ülikoolina alustati tööd 1919. aastal. Aastail 1940–1941 ja 1944–1989 kandis ülikool nime Tartu Riiklik Ülikool (lühend TRÜ)."
   }
 ]

@@ -20,14 +20,14 @@ app.use(express.json());
 // The await keyword makes the function pause the execution and wait for a resolved promise before it continues
 // Syntax:  "async(req, res) => {let value = await promise}"
 
- 
-// Task 1
-app.post('/api/posts', async(req, res) => {
+
+// Inserting into a post
+app.post('/api/posts', async (req, res) => {
     try {
         console.log("a post request has arrived");
         const post = req.body;
         const newpost = await pool.query(
-            "INSERT INTO posttable(title, body, urllink) values ($1, $2, $3)    RETURNING*", [post.title, post.body, post.urllink]
+            "INSERT INTO posttable(body, date) values ($1, $2)    RETURNING*", [post.body, post.date]
             // $1, $2, $3 are mapped to the first, second and third element of the passed array (post.title, post.body, post.urllink)
             // The RETURNING keyword in PostgreSQL allows returning a value from the insert or update statement.
             // using "*" after the RETURNING keyword in PostgreSQL, will return everything
@@ -36,27 +36,27 @@ app.post('/api/posts', async(req, res) => {
     } catch (err) {
         console.error(err.message);
     }
-}); 
+});
 
 
-/* 
-// Task 2
-app.get('/api/posts', async(req, res) => {
+
+// Get posts
+app.get('/api/posts', async (req, res) => {
     try {
         console.log("get posts request has arrived");
         const posts = await pool.query(
-            "SELECT * FROM posttable"
+            "SELECT * FROM posttable ORDER BY id DESC"
         );
         res.json(posts.rows);
     } catch (err) {
         console.error(err.message);
     }
 });
- */
 
-/* 
+
+
 // Task 3
-app.get('/api/posts/:id', async(req, res) => {
+app.get('/api/posts/:id', async (req, res) => {
     try {
         console.log("get a post with route parameter  request has arrived");
         // The req.params property is an object containing properties mapped to the named route "parameters". 
@@ -72,29 +72,27 @@ app.get('/api/posts/:id', async(req, res) => {
     } catch (err) {
         console.error(err.message);
     }
-}); 
-*/
+});
 
-/* 
+
 // Task 4
-app.put('/api/posts/:id', async(req, res) => {
+app.put('/api/posts/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const post = req.body;
         console.log("update request has arrived");
         const updatepost = await pool.query(
-            "UPDATE posttable SET (title, body, urllink) = ($2, $3, $4) WHERE id = $1", [id, post.title, post.body, post.urllink]
+            "UPDATE posttable SET (body, date) = ($2, $3) WHERE id = $1", [id, post.body, post.date]
         );
         res.json(updatepost);
     } catch (err) {
         console.error(err.message);
     }
 });
- */
 
-/* 
+
 // Task 5
-app.delete('/api/posts/:id', async(req, res) => {
+app.delete('/api/posts/:id', async (req, res) => {
     try {
         const { id } = req.params;
         //const post = req.body; // we do not need a body for a delete request
@@ -106,8 +104,7 @@ app.delete('/api/posts/:id', async(req, res) => {
     } catch (err) {
         console.error(err.message);
     }
-}); 
-*/
+});
 
 app.listen(port, () => {
     console.log("Server is listening to port " + port)

@@ -1,12 +1,12 @@
 <template>
-  <div class="main-div">
+  <div class="posts">
     <HeaderBar />
     <button class="logbtn" v-on:click="resetLikes">Logout</button>
     <post-comp
       v-for="post in posts"
-      v-bind:key="post.postId"
-      v-bind:post="post.post"
-      v-bind:userId="post.userId"
+      v-bind:key="post.id"
+      v-bind:body="post.body"
+      v-bind:date="post.date"
     ></post-comp>
     <button v-on:click="resetLikes">Add Post</button>
     <button class="btn2" v-on:click="resetLikes">Delete all</button>
@@ -24,28 +24,34 @@ import PostComp from "@/components/PostComp.vue";
 
 export default {
   name: "PostsView",
-  data: function () {
-    return {};
-  },
-  computed: {
-    posts() {
-      return this.$store.state.posts;
-    },
-    users() {
-      return this.$store.state.users;
-    },
+  data() {
+    return {
+      posts: [],
+    };
   },
   components: { PostComp },
   methods: {
     resetLikes: function () {
       this.$store.dispatch("resetLikesAct");
     },
+    fetchPosts() {
+      fetch(`http://localhost:3000/api/posts`)
+        .then((response) => response.json())
+        .then((data) => (this.posts = data))
+        .catch((err) => console.log(err.message));
+    },
+  },
+  mounted() {
+    // call fetchPosts() when this element (AllPosts) mounts
+    this.fetchPosts();
+    console.log(this.posts);
+    console.log("mounted");
   },
 };
 </script>
 
 <style scoped>
-.main-div button {
+.posts button {
   flex-direction: column;
   font-family: "Monospace", Monaco;
   background-color: #3fb984;

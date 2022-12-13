@@ -4,27 +4,12 @@
       <div class="card border-shadowed">
         <div class="card-heading">
           <div class="box">
-            <div v-if="users[userId - 1]">
-              <img v-bind:src="users[userId - 1].picture" />
-            </div>
             <div class="right">
-              <span>{{ dateFormatter(post.date) }}</span>
+              <span>{{ dateFormatter(date) }}</span>
             </div>
           </div>
         </div>
-        <img v-bind:src="post.img" />
-        <p>{{ post.message }}</p>
-        <div class="card-footer">
-          <button class="invisible-button" v-on:click="IncreaseLike">
-            <img
-              v-bind:src="'https://cdn.worldvectorlogo.com/logos/thumbs-up-facebook.svg'"
-              v-on:click="pass"
-            />
-          </button>
-          <div class="likebox">
-            {{ post.like }}
-          </div>
-        </div>
+        <p>{{ body }}</p>
       </div>
     </div>
   </div>
@@ -39,13 +24,9 @@ export default {
     };
   },
 
-  computed: {
-    users() {
-      return this.$store.state.users;
-    },
-  },
+  computed: {},
 
-  props: ["post", "userId"],
+  props: ["body", "date"],
 
   methods: {
     dateFormatter: function (date) {

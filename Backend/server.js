@@ -27,7 +27,7 @@ app.post('/api/posts', async (req, res) => {
         console.log("a post request has arrived");
         const post = req.body;
         const newpost = await pool.query(
-            "INSERT INTO posts (body, date) values ($1, $2)    RETURNING*", [post.body, post.date]
+            "INSERT INTO posts (date, message) values ($2, $1)    RETURNING*", [post.message, post.date]
             // $1, $2, $3 are mapped to the first, second and third element of the passed array (post.title, post.body, post.urllink)
             // The RETURNING keyword in PostgreSQL allows returning a value from the insert or update statement.
             // using "*" after the RETURNING keyword in PostgreSQL, will return everything
@@ -45,7 +45,7 @@ app.get('/api/posts', async (req, res) => {
     try {
         console.log("get posts request has arrived");
         const posts = await pool.query(
-            "SELECT * FROM posts ORDER BY id DESC"
+            "SELECT * FROM posts ORDER BY date DESC"
         );
         console.log(posts)
         res.json(posts.rows);
@@ -81,7 +81,7 @@ app.put('/api/posts/:id', async (req, res) => {
         const post = req.body;
         console.log("update request has arrived");
         const updatepost = await pool.query(
-            "UPDATE posts SET (body, date) = ($2, $3) WHERE id = $1", [id, post.body, post.date]
+            "UPDATE posts SET (date, message) = ($3, $2) WHERE id = $1", [id, post.message, post.date]
         );
         res.json(updatepost);
     } catch (err) {
@@ -104,18 +104,18 @@ app.delete('/api/posts/:id', async (req, res) => {
         console.error(err.message);
     }
 });
-/*
+
 app.delete('/api/posts', async(req, res) => {
     try {
         console.log("delete all posts request has arrived");
         const deleteAllposts = await pool.query(
-            "TRUNCATE TABLE posttable"
+            "TRUNCATE TABLE posts"
         );
         res.json(deleteAllposts);
     } catch (err) {
         console.error(err.message);
     }
-}); */
+});
 
 app.listen(port, () => {
     console.log("Server is listening to port " + port)

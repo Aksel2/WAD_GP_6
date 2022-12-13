@@ -58,7 +58,7 @@ const createPostsTableQuery = `
 	    "message" VARCHAR(2000) NOT NULL
     );`;
 
-const createUsersTableQuery= `
+const createUsersTableQuery = `
     CREATE TABLE IF NOT EXISTS "users" (
 	    "id" SERIAL PRIMARY KEY,
         "fullname" DATE NOT NULL,
@@ -68,9 +68,11 @@ const createUsersTableQuery= `
 
 // Helper function for looping trough json and inserting to poststable
 const populatePostsTable = async () => {
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 2; i++) {
+
+    console.log(posts[i]["date"]);
     let id = posts[i]["id"];
-    let date =  posts[i]["date"];
+    let date = posts[i]["date"];
     let message = posts[i]["message"];
 
     await insertPost(date, message).then((result) => {

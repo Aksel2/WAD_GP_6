@@ -1,7 +1,7 @@
 <template>
   <div id="posts">
     <div class="container">
-      <a :href="'/api/apost/' + id">
+      <a :href="'/api/apost/'+Id">
         <div class="card border-shadowed">
           <div class="card-heading">
             <div class="box">
@@ -22,20 +22,17 @@ export default {
   name: "PostComp",
   data: function () {
     return {
-      postId: this.$.vnode.key,
+      Id: this.$.vnode.key,
     };
   },
 
   computed: {},
 
-  props: ["message", "date", "id"],
+  props: ["message", "date"],
 
   methods: {
     dateFormatter: function (date) {
-      const dateString = date;
-      const newDate = new Date(dateString);
-      console.log(date);
-      console.log(newDate);
+      const newDate = new Date(date);
 
       const monthNames = [
         "January",

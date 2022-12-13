@@ -3,8 +3,14 @@
     <HeaderBar />
     <div id="form">
       <h3>Edit Post</h3>
-      <label for="body">Post Text: </label>
-      <input name="body" type="text" id="body" required v-model="post.body" />
+      <label for="message">Post Text: </label>
+      <input
+        name="message"
+        type="text"
+        id="message"
+        required
+        v-model="post.message"
+      />
       <div id="buttons">
         <button v-on:click="updatePost" class="updatePost">Update</button>
         <button v-on:click="deletePost" class="deletePost">Delete</button>
@@ -25,20 +31,34 @@ export default {
     return {
       post: {
         id: "",
-        body: "",
         date: "",
+        message: "",
       },
     };
   },
   methods: {
     getDate: function () {
-      let today = new Date();
-      var dd = String(today.getDate()).padStart(2, "0");
-      var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-      var yyyy = today.getFullYear();
-      today = dd + "/" + mm + "/" + yyyy;
-      console.log(today);
-      return today;
+      const newDate = new Date();
+
+      const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      const day = newDate.getDate();
+      const month = monthNames[newDate.getMonth()];
+      const year = newDate.getFullYear();
+      console.log(day + " " + month + ", " + year)
+      return newDate;
     },
     fetchAPost(id) {
       // fetch one post with the specied id (id)
@@ -47,7 +67,9 @@ export default {
         .then((data) => (this.post = data))
         .catch((err) => console.log(err.message));
     },
+
     updatePost() {
+      console.log(this.post)
       this.post.date = this.getDate();
       // using Fetch - put method - updates a specific post based on the passed id and the specified body
       fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
@@ -56,7 +78,6 @@ export default {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(this.post),
-        date: JSON.stringify(this.date),
       })
         .then((response) => {
           console.log(response.data);

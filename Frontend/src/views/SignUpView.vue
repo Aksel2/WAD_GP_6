@@ -1,36 +1,57 @@
 <template>
-  <div><Header /></div>
-  <div class="sign-up">
-    <form @sumbit.prevent="index.html">
-      <div class="form">
-        <div class="window border-shadowed">
-          <h2 class="heading">Sign Up</h2>
-          <strong>Welcome to PostIt!</strong>
-          <div class="input-field">
-            <span>Email</span>
-            <input v-model="email" type="text" id="email" placeholder="Email" required="required" />
-          </div>
+  <div class="main-div">
+    <HeaderBar />
+    <div class="sign-up">
+      <form @sumbit.prevent="index.html">
+        <div class="form">
+          <div class="window border-shadowed">
+            <h2 class="heading">Sign Up</h2>
+            <strong>Welcome to PostIt!</strong>
+            <div class="input-field">
+              <span>Email</span>
+              <input
+                v-model="email"
+                type="text"
+                id="email"
+                placeholder="Email"
+                required="required"
+              />
+            </div>
 
-          <div class="input-field">
-            <span>Password</span>
-            <input v-model="password" type="text" id="password" placeholder="Password" required="required" />
-          </div>
+            <div class="input-field">
+              <span>Password</span>
+              <input
+                v-model="password"
+                type="text"
+                id="password"
+                placeholder="Password"
+                required="required"
+              />
+            </div>
 
-          <div v-if="passwordError" class="error">{{ passwordError }}</div>
-          <!-- <router-link :is="passwordError == ''" :to="{ path: '/' }"> -->
-          <button v-on:click="registerUser" type="submit" class="button" required="required">Sing Up</button>
-          <!-- </router-link> -->
+            <div v-if="passwordError" class="error">{{ passwordError }}</div>
+            <!-- <router-link :is="passwordError == ''" :to="{ path: '/' }"> -->
+            <button
+              v-on:click="registerUser"
+              type="submit"
+              class="button"
+              required="required"
+            >
+              Sing Up
+            </button>
+            <!-- </router-link> -->
+          </div>
         </div>
-      </div>
-    </form>
-    <!-- <p>Email: {{ email }} | password: {{ password }}</p> -->
-    <div><Footer /></div>
+      </form>
+      <!-- <p>Email: {{ email }} | password: {{ password }}</p> -->
+      <FooterBar />
+    </div>
   </div>
 </template>
 
 <script setup>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
+import HeaderBar from "../components/HeaderBar.vue";
+import FooterBar from "../components/FooterBar.vue";
 </script>
 <script>
 export default {

@@ -20,7 +20,7 @@ app.use(express.json());
 // The await keyword makes the function pause the execution and wait for a resolved promise before it continues
 // Syntax:  "async(req, res) => {let value = await promise}"
 
-/* 
+ 
 // Task 1
 app.post('/api/posts', async(req, res) => {
     try {
@@ -37,7 +37,7 @@ app.post('/api/posts', async(req, res) => {
         console.error(err.message);
     }
 }); 
-*/
+
 
 /* 
 // Task 2

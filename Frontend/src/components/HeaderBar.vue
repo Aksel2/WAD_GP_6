@@ -2,12 +2,13 @@
   <div class="header1">
     <router-link to="/">Posts</router-link>
     <router-link to="/signUp">Sign up</router-link>
+    <router-link to="/contact">Contacts</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: "header",
+  name: "headerBar",
 };
 </script>
 

@@ -1,26 +1,26 @@
 <template>
-  <div><Header /></div>
-  <left-side-bar></left-side-bar>
-  <post-comp
-    v-for="post in posts"
-    v-bind:key="post.postId"
-    v-bind:post="post.post"
-    v-bind:userId="post.userId"
-  ></post-comp>
-  <div class="resetButton">
-    <button v-on:click="resetLikes">Reset likes</button>
+  <div class="main-div">
+    <HeaderBar />
+    <button class="logbtn" v-on:click="resetLikes">Logout</button>
+    <post-comp
+      v-for="post in posts"
+      v-bind:key="post.postId"
+      v-bind:post="post.post"
+      v-bind:userId="post.userId"
+    ></post-comp>
+    <button v-on:click="resetLikes">Add Post</button>
+    <button class="btn2" v-on:click="resetLikes">Delete all</button>
+    <FooterBar />
   </div>
-  <div><Footer /></div>
 </template>
 
 <script setup>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
+import HeaderBar from "../components/HeaderBar.vue";
+import FooterBar from "../components/FooterBar.vue";
 </script>
 
 <script>
 import PostComp from "@/components/PostComp.vue";
-import LeftSideBar from "@/components/LeftSideBar.vue";
 
 export default {
   name: "PostsView",
@@ -35,7 +35,7 @@ export default {
       return this.$store.state.users;
     },
   },
-  components: { PostComp, LeftSideBar },
+  components: { PostComp },
   methods: {
     resetLikes: function () {
       this.$store.dispatch("resetLikesAct");
@@ -45,13 +45,18 @@ export default {
 </script>
 
 <style scoped>
-
-.resetButton button {
+.main-div button {
+  flex-direction: column;
   font-family: "Monospace", Monaco;
   background-color: #3fb984;
   width: 11%;
   height: 40px;
   border-radius: 15px;
 }
-
+.btn2 {
+  margin-left: 10%;
+}
+.logbtn {
+  margin-top: 100px;
+}
 </style>

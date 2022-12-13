@@ -1,16 +1,18 @@
 <template>
   <div id="posts">
     <div class="container">
-      <div class="card border-shadowed">
-        <div class="card-heading">
-          <div class="box">
-            <div class="right">
-              <span>{{ dateFormatter(date) }}</span>
+      <a :href="'/api/apost/' + id">
+        <div class="card border-shadowed">
+          <div class="card-heading">
+            <div class="box">
+              <div class="right">
+                <span>{{ dateFormatter(date) }}</span>
+              </div>
             </div>
           </div>
+          <p>{{ message }}</p>
         </div>
-        <p>{{ body }}</p>
-      </div>
+      </a>
     </div>
   </div>
 </template>
@@ -26,13 +28,15 @@ export default {
 
   computed: {},
 
-  props: ["body", "date"],
+  props: ["message", "date", "id"],
 
   methods: {
     dateFormatter: function (date) {
-      let dateString = date;
-      let dateParts = dateString.split("/");
-      let dateObject = new Date(+dateParts[2], dateParts[1] - 1, +dateParts[0]);
+      const dateString = date;
+      const newDate = new Date(dateString);
+      console.log(date);
+      console.log(newDate);
+
       const monthNames = [
         "January",
         "February",
@@ -47,9 +51,11 @@ export default {
         "November",
         "December",
       ];
-      const day = dateObject.getDate();
-      const month = monthNames[dateObject.getMonth()];
-      const year = dateObject.getFullYear();
+      const day = newDate.getDate();
+      console.log(day);
+      const month = monthNames[newDate.getMonth()];
+      const year = newDate.getFullYear();
+
       return day + " " + month + ", " + year;
     },
     IncreaseLike: function () {
@@ -64,6 +70,13 @@ export default {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
 }
 
 .container {

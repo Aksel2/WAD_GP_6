@@ -3,13 +3,11 @@
     <HeaderBar />
     <button class="logbtn" v-on:click="resetLikes">Logout</button>
     <div class="post" v-for="post in posts" :key="post.id">
-      <a :href="'/api/apost/' + post.id">
-          <post-comp
-            v-bind:key="post.id"
-            v-bind:body="post.body"
-            v-bind:date="post.date"
-          ></post-comp>
-      </a>
+      <post-comp
+        v-bind:key="post.id"
+        v-bind:message="post.message"
+        v-bind:date="post.date"
+      ></post-comp>
     </div>
     <button v-on:click="resetLikes">Add Post</button>
     <button v-on:click="deleteAllPosts" class="btn2">Delete all</button>
@@ -71,14 +69,12 @@ export default {
 </script>
 
 <style scoped>
-a:hover, a:visited, a:link, a:active
-{
-    text-decoration: none;
-}
+
 .posts button {
   flex-direction: column;
   font-family: "Monospace", Monaco;
-  background-color: #3fb984;
+  background-color: #7dd9fb;
+  border: none;
   width: 11%;
   height: 40px;
   border-radius: 15px;

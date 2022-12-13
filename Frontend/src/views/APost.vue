@@ -2,25 +2,23 @@
   <div class="aPost">
     <HeaderBar />
     <div id="form">
-      <h3>A Post</h3>
-      <label for="body">Body: </label>
+      <h3>Edit Post</h3>
+      <label for="body">Post Text: </label>
       <input name="body" type="text" id="body" required v-model="post.body" />
+      <div id="buttons">
+        <button v-on:click="updatePost" class="updatePost">Update</button>
+        <button v-on:click="deletePost" class="deletePost">Delete</button>
+      </div>
     </div>
-    <div id="buttons">
-      <button @click="updatePost" class="updatePost">Update</button>
-      <button @click="deletePost" class="deletePost">Delete</button>
-    </div>
-    <FooterBar/>
+    <FooterBar />
   </div>
-  
 </template>
-
-  <script setup>
+<script setup>
 import HeaderBar from "../components/HeaderBar.vue";
 import FooterBar from "../components/FooterBar.vue";
 </script>
-  
-  <script>
+
+<script>
 export default {
   name: "APost",
   data() {
@@ -28,10 +26,20 @@ export default {
       post: {
         id: "",
         body: "",
+        date: "",
       },
     };
   },
   methods: {
+    getDate: function () {
+      let today = new Date();
+      var dd = String(today.getDate()).padStart(2, "0");
+      var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+      var yyyy = today.getFullYear();
+      today = dd + "/" + mm + "/" + yyyy;
+      console.log(today);
+      return today;
+    },
     fetchAPost(id) {
       // fetch one post with the specied id (id)
       fetch(`http://localhost:3000/api/posts/${id}`)
@@ -40,6 +48,7 @@ export default {
         .catch((err) => console.log(err.message));
     },
     updatePost() {
+      this.post.date = this.getDate();
       // using Fetch - put method - updates a specific post based on the passed id and the specified body
       fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
         method: "PUT",
@@ -47,6 +56,7 @@ export default {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(this.post),
+        date: JSON.stringify(this.date),
       })
         .then((response) => {
           console.log(response.data);
@@ -79,13 +89,13 @@ export default {
   },
 };
 </script>
-  
-  <style scoped>
+
+<style scoped>
 #form {
   max-width: 420px;
   margin: 100px auto;
-  margin-bottom: 15px;
-  background: rgb(153, 226, 248);
+  margin-bottom: 10px;
+  background: #ccc5b9;
   text-align: left;
   padding: 40px;
   border-radius: 10px;
@@ -113,13 +123,13 @@ input {
   color: black;
 }
 button {
-  background: rgb(153, 226, 248);
+  background: #7dd9fb;
   border: 0;
   padding: 10px 30px;
-  margin-top: 10px;
-  margin-left: 50px;
+  margin-top: 30px;
+  margin-left: 70px;
   color: black;
-  font-weight: bold;
+
   border-radius: 20px;
 }
 </style>

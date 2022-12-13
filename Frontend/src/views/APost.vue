@@ -39,25 +39,6 @@ export default {
   methods: {
     getDate: function () {
       const newDate = new Date();
-
-      const monthNames = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      const day = newDate.getDate();
-      const month = monthNames[newDate.getMonth()];
-      const year = newDate.getFullYear();
-      console.log(day + " " + month + ", " + year)
       return newDate;
     },
     fetchAPost(id) {
@@ -131,7 +112,6 @@ label {
   margin: 25px 0 15px;
   font-size: 0.8em;
   text-transform: uppercase;
-  letter-spacing: 1px;
   font-weight: bold;
 }
 input {

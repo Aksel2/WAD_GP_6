@@ -2,14 +2,17 @@
   <div class="posts">
     <HeaderBar />
     <button class="logbtn" v-on:click="resetLikes">Logout</button>
-    <post-comp
-      v-for="post in posts"
-      v-bind:key="post.id"
-      v-bind:body="post.body"
-      v-bind:date="post.date"
-    ></post-comp>
+    <div class="post" v-for="post in posts" :key="post.id">
+      <a :href="'/api/apost/' + post.id">
+          <post-comp
+            v-bind:key="post.id"
+            v-bind:body="post.body"
+            v-bind:date="post.date"
+          ></post-comp>
+      </a>
+    </div>
     <button v-on:click="resetLikes">Add Post</button>
-    <button class="btn2" v-on:click="resetLikes">Delete all</button>
+    <button v-on:click="deleteAllPosts" class="btn2">Delete all</button>
     <FooterBar />
   </div>
 </template>
@@ -40,7 +43,24 @@ export default {
         .then((data) => (this.posts = data))
         .catch((err) => console.log(err.message));
     },
+
+    deleteAllPosts() {
+      // using Fetch - TRUNCATE  method - removes all posts from the table
+      fetch(`http://localhost:3000/api/posts/`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((response) => {
+          console.log(response.data);
+          // We are using the router instance of this element to navigate to a different URL location
+          this.$router.push("/posts");
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    },
   },
+
   mounted() {
     // call fetchPosts() when this element (AllPosts) mounts
     this.fetchPosts();
@@ -51,6 +71,10 @@ export default {
 </script>
 
 <style scoped>
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
 .posts button {
   flex-direction: column;
   font-family: "Monospace", Monaco;

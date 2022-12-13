@@ -1,5 +1,5 @@
 <template>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
@@ -10,9 +10,9 @@
   text-align: center;
   color: #2c3e50;
 }
-body{
-  padding:0;
-  margin:0;
+body {
+  padding: 0;
+  margin: 0;
 }
 nav {
   padding: 30px;

@@ -61,7 +61,7 @@ export default {
 
 <style scoped>
 #posts {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -71,7 +71,7 @@ export default {
   justify-content: center;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .container-footer {

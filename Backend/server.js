@@ -55,7 +55,6 @@ app.get('/api/posts', async (req, res) => {
 
 
 
-// Task 3
 app.get('/api/posts/:id', async (req, res) => {
     try {
         console.log("get a post with route parameter  request has arrived");
@@ -75,7 +74,6 @@ app.get('/api/posts/:id', async (req, res) => {
 });
 
 
-// Task 4
 app.put('/api/posts/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -91,7 +89,7 @@ app.put('/api/posts/:id', async (req, res) => {
 });
 
 
-// Task 5
+
 app.delete('/api/posts/:id', async (req, res) => {
     try {
         const { id } = req.params;
@@ -105,6 +103,18 @@ app.delete('/api/posts/:id', async (req, res) => {
         console.error(err.message);
     }
 });
+/*
+app.delete('/api/posts', async(req, res) => {
+    try {
+        console.log("delete all posts request has arrived");
+        const deleteAllposts = await pool.query(
+            "TRUNCATE TABLE posttable"
+        );
+        res.json(deleteAllposts);
+    } catch (err) {
+        console.error(err.message);
+    }
+}); */
 
 app.listen(port, () => {
     console.log("Server is listening to port " + port)

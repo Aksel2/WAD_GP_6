@@ -5,12 +5,14 @@ import PostsView from "../views/PostsView.vue";
 import ContactView from "../views/ContactView.vue";
 import APost from "../views/APost.vue";
 import AddPost from "../views/AddPost.vue";
+import PageNotFound from "../views/PageNotFound.vue";
 
 const routes = [
   {
     path: "/",
     name: "posts",
-    component: () => import("../views/PostsView.vue"),
+    // component: () => import("../views/PostsView.vue"),
+    component: PostsView,
   },
 
   {
@@ -37,6 +39,11 @@ const routes = [
     path: "/contact",
     name: "contact",
     component: ContactView,
+  },
+  {
+    path: "/:catchAll(.*)",
+    name: "PageNotFound",
+    component: PageNotFound,
   },
 ];
 

@@ -3,11 +3,7 @@
     <HeaderBar />
     <button class="logbtn" v-on:click="logOut">Logout</button>
     <div class="post" v-for="post in posts" :key="post.id">
-      <post-comp
-        v-bind:key="post.id"
-        v-bind:message="post.message"
-        v-bind:date="post.date"
-      ></post-comp>
+      <post-comp v-bind:key="post.id" v-bind:message="post.message" v-bind:date="post.date"></post-comp>
     </div>
     <div class="btns">
       <button v-on:click="addPost">Add Post</button>
@@ -38,19 +34,20 @@ export default {
       this.$store.dispatch("resetLikesAct");
     },
     fetchPosts() {
-      fetch(`http://localhost:3000/api/posts`)
+      console.log("fetching posts");
+      fetch(`http://localhost:3000/posts`)
         .then((response) => response.json())
         .then((data) => (this.posts = data))
         .catch((err) => console.log(err.message));
     },
 
     addPost() {
-      this.$router.push("/api/addpost");
+      this.$router.push("/auth/addpost");
     },
 
     deleteAllPosts() {
       // using Fetch - TRUNCATE  method - removes all posts from the table
-      fetch(`http://localhost:3000/api/posts/`, {
+      fetch(`http://localhost:3000/auth/posts/`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       })

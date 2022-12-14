@@ -151,7 +151,7 @@ app.get("/posts", async (req, res) => {
   try {
     console.log("get posts request has arrived");
     const posts = await pool.query("SELECT * FROM posts ORDER BY date DESC");
-    console.log(posts);
+    // console.log(posts);
     res.json(posts.rows);
   } catch (err) {
     console.error(err.message);

@@ -43,7 +43,7 @@ export default {
     },
     fetchAPost(id) {
       // fetch one post with the specied id (id)
-      fetch(`http://localhost:3000/api/posts/${id}`)
+      fetch(`http://localhost:3000/auth/posts/${id}`)
         .then((response) => response.json())
         .then((data) => (this.post = data))
         .catch((err) => console.log(err.message));
@@ -52,7 +52,7 @@ export default {
     updatePost() {
      // this.post.date = this.getDate();
       // using Fetch - put method - updates a specific post based on the passed id and the specified body
-      fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
+      fetch(`http://localhost:3000/auth/posts/${this.post.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export default {
     },
     deletePost() {
       // using Fetch - delete method - delets a specific post based on the passed id
-      fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
+      fetch(`http://localhost:3000/auth/posts/${this.post.id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       })

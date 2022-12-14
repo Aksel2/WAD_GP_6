@@ -15,7 +15,7 @@ const posts = require("./data/posts.json");
 // this code will work and a table will be created if you have already created the "testWad" database.
 const pool = new Pool({
   user: "postgres",
-  password: "123", // Enter your password here
+  password: "hello123", // Enter your password here
   database: "testWad", //Try to use the same name for your database
   host: "localhost",
   port: "5432",
@@ -65,7 +65,7 @@ const createUsersTableQuery = `
 	    "password" VARCHAR(200)  NOT NULL
     );`;
 
-// Helper function for looping trough json and inserting to poststable
+/* Helper function for looping trough json and inserting to poststable
 const populatePostsTable = async () => {
   for (let i = 0; i < posts.length; i++) {
     console.log(posts[i]["date"]);
@@ -81,7 +81,7 @@ const populatePostsTable = async () => {
 
     console.log("\nInserted", date, message, "to posts");
   }
-};
+};*/
 
 execute(createPostsTableQuery)
   .then((result) => {
@@ -91,7 +91,7 @@ execute(createPostsTableQuery)
   })
   .then(async (result) => {
     console.log("\nPopulating posts table");
-    await populatePostsTable();
+    //await populatePostsTable();
   });
 
 execute(createUsersTableQuery).then((result) => {

@@ -19,10 +19,10 @@
 
             <div v-if="passwordError" class="error">{{ passwordError }}</div>
             <!-- <router-link :is="passwordError == ''" :to="{ path: '/' }"> -->
-            <div class="buttons">
-              <button v-on:click="Login" type="submit" class="button" required="required">Login</button>
-              <button v-on:click="SignUp" type="submit" class="button" required="required">Sing Up</button>
-            </div>
+              <div class="buttons">
+            <button v-on:click="LogIn" type="submit" class="button" required="required">Login</button>
+            <button v-on:click="SignUp" type="submit" class="button" required="required">Sing Up</button>
+              </div>
             <!-- </router-link> -->
           </div>
         </div>

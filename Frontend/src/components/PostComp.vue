@@ -1,26 +1,32 @@
 <template>
   <div id="posts">
     <div class="container">
-        <div class="card border-shadowed" v-on:click="editPost('/api/apost/' + Id)">
-          <div class="card-heading">
-            <div class="box">
-              <div class="right">
-                <span>{{ dateFormatter(date) }}</span>
-              </div>
+      <div
+        class="card border-shadowed"
+        v-on:click="editPost('/auth/apost/' + Id)"
+      >
+        <div class="card-heading">
+          <div class="box">
+            <div class="right">
+              <span>{{ dateFormatter(date) }}</span>
             </div>
           </div>
-          <p>{{ message }}</p>
         </div>
+        <p>{{ message }}</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import auth from "@/auth";
+
 export default {
   name: "PostComp",
   data: function () {
     return {
       Id: this.$.vnode.key,
+      posts: [],
     };
   },
 
@@ -30,6 +36,14 @@ export default {
 
   methods: {
     editPost(route) {
+      fetch(`http://localhost:3000/posts`)
+        .then((response) => response.json())
+        .then((data) => {
+          this.posts = data;
+          console.log(data.response);
+        })
+        .catch((err) => console.log(err.message));
+
       this.$router.push(route);
     },
 
@@ -56,9 +70,6 @@ export default {
       const year = newDate.getFullYear();
 
       return day + " " + month + ", " + year;
-    },
-    IncreaseLike: function () {
-      this.$store.dispatch("IncreaseLikeAct", { id: this.postId });
     },
   },
 };

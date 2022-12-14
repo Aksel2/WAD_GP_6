@@ -21,12 +21,12 @@ const routes = [
     component: PostsView,
   },
   {
-    path: "/apost/",
+    path: "/auth/apost/:id",
     name: "APost",
     component: APost,
   },
   {
-    path: "/addpost",
+    path: "/auth/addpost",
     name: "AddPost",
     component: AddPost,
   },

@@ -38,7 +38,6 @@ export default {
   methods: {
     addPost() {
       this.post.date = new Date();
-      console.log(this.post.date);
       fetch(`http://localhost:3000/auth/posts/`, {
         method: "POST",
         headers: {

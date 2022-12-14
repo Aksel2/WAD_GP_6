@@ -4,7 +4,13 @@
     <div id="form">
       <h3>Edit Post</h3>
       <label for="message">Post Text: </label>
-      <input name="message" type="text" id="message" required v-model="post.message" />
+      <input
+        name="message"
+        type="text"
+        id="message"
+        required
+        v-model="post.message"
+      />
       <div id="buttons">
         <button v-on:click="updatePost" class="updatePost">Update</button>
         <button v-on:click="deletePost" class="deletePost">Delete</button>
@@ -31,10 +37,6 @@ export default {
     };
   },
   methods: {
-    getDate: function () {
-      const newDate = new Date();
-      return newDate;
-    },
     fetchAPost(id) {
       // fetch one post with the specied id (id)
       fetch(`http://localhost:3000/auth/posts/${id}`, {

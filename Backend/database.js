@@ -61,9 +61,8 @@ const createPostsTableQuery = `
 const createUsersTableQuery = `
     CREATE TABLE IF NOT EXISTS "users" (
 	    "id" SERIAL PRIMARY KEY,
-        "fullname" DATE NOT NULL,
-	    "email" VARCHAR(2000) NOT NULL,
-	    "password" INTEGER NOT NULL
+	    "email" VARCHAR(200) NOT NULL,
+	    "password" VARCHAR(200)  NOT NULL
     );`;
 
 // Helper function for looping trough json and inserting to poststable
@@ -91,7 +90,7 @@ execute(createPostsTableQuery)
     }
   })
   .then(async (result) => {
-    console.log('\nPopulating posts table')
+    console.log("\nPopulating posts table");
     await populatePostsTable();
   });
 

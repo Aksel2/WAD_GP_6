@@ -15,7 +15,7 @@ const posts = require("./data/posts.json");
 // this code will work and a table will be created if you have already created the "testWad" database.
 const pool = new Pool({
   user: "postgres",
-  password: "hello123", // Enter your password here
+  password: "123", // Enter your password here
   database: "testWad", //Try to use the same name for your database
   host: "localhost",
   port: "5432",
@@ -61,15 +61,13 @@ const createPostsTableQuery = `
 const createUsersTableQuery = `
     CREATE TABLE IF NOT EXISTS "users" (
 	    "id" SERIAL PRIMARY KEY,
-        "fullname" DATE NOT NULL,
-	    "email" VARCHAR(2000) NOT NULL,
-	    "password" INTEGER NOT NULL
+	    "email" VARCHAR(200) NOT NULL,
+	    "password" VARCHAR(200)  NOT NULL
     );`;
 
 // Helper function for looping trough json and inserting to poststable
 const populatePostsTable = async () => {
-  for (let i = 0; i < 2; i++) {
-
+  for (let i = 0; i < posts.length; i++) {
     console.log(posts[i]["date"]);
     let id = posts[i]["id"];
     let date = posts[i]["date"];
@@ -85,12 +83,16 @@ const populatePostsTable = async () => {
   }
 };
 
-execute(createPostsTableQuery).then((result) => {
-  if (result) {
-    console.log('If does not exists, create the "posts" table');
-  }
-  populatePostsTable();
-});
+execute(createPostsTableQuery)
+  .then((result) => {
+    if (result) {
+      console.log('If does not exists, create the "posts" table');
+    }
+  })
+  .then(async (result) => {
+    console.log("\nPopulating posts table");
+    await populatePostsTable();
+  });
 
 execute(createUsersTableQuery).then((result) => {
   if (result) {

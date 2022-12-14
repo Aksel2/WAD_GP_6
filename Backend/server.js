@@ -140,6 +140,7 @@ app.post("/auth/posts", auth, async (req, res) => {
       // The RETURNING keyword in PostgreSQL allows returning a value from the insert or update statement.
       // using "*" after the RETURNING keyword in PostgreSQL, will return everything
     );
+    console.log('restart')
     res.json(newpost);
   } catch (err) {
     console.error(err.message);
@@ -152,7 +153,8 @@ app.get("/posts", async (req, res) => {
     console.log("get posts request has arrived");
     const posts = await pool.query("SELECT * FROM posts ORDER BY date DESC");
     // console.log(posts);
-    res.json(posts.rows);
+    // res.json(posts.rows);
+    console.log('done')
   } catch (err) {
     console.error(err.message);
   }

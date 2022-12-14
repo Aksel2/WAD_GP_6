@@ -19,10 +19,10 @@
 
             <div v-if="passwordError" class="error">{{ passwordError }}</div>
             <!-- <router-link :is="passwordError == ''" :to="{ path: '/' }"> -->
-              <div class="buttons">
-            <button v-on:click="Login" type="submit" class="button" required="required">Login</button>
-            <button v-on:click="SignUp" type="submit" class="button" required="required">Sing Up</button>
-              </div>
+            <div class="buttons">
+              <button v-on:click="Login" type="submit" class="button" required="required">Login</button>
+              <button v-on:click="SignUp" type="submit" class="button" required="required">Sing Up</button>
+            </div>
             <!-- </router-link> -->
           </div>
         </div>
@@ -78,7 +78,7 @@ export default {
         password: this.password,
       };
 
-      console.log('starting login')
+      console.log("starting login");
       // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
       fetch("http://localhost:3000/auth/login", {
         method: "POST",
@@ -98,6 +98,7 @@ export default {
           console.log(e);
           console.log("error");
         });
+      this.$router.push("/posts");
     },
 
     SignUp() {
@@ -106,7 +107,7 @@ export default {
         password: this.password,
       };
 
-      console.log('starting signup')
+      console.log("starting signup");
       // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
       fetch("http://localhost:3000/auth/signup", {
         method: "POST",
@@ -126,6 +127,8 @@ export default {
           console.log(e);
           console.log("error");
         });
+
+      this.$router.push("/posts");
     },
   },
 };

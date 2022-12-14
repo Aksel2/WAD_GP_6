@@ -60,7 +60,7 @@ export default {
    },
 
     addPost() {
-      this.$router.push("/addpost");
+      this.$router.push("/auth/addpost");
     },
 
     deleteAllPosts() {

@@ -1,8 +1,7 @@
 <template>
   <div id="posts">
     <div class="container">
-      <a :href="'/api/apost/'+Id">
-        <div class="card border-shadowed">
+        <div class="card border-shadowed" v-on:click="editPost('/api/apost/' + Id)">
           <div class="card-heading">
             <div class="box">
               <div class="right">
@@ -12,7 +11,6 @@
           </div>
           <p>{{ message }}</p>
         </div>
-      </a>
     </div>
   </div>
 </template>
@@ -31,6 +29,10 @@ export default {
   props: ["message", "date"],
 
   methods: {
+    editPost(route) {
+      this.$router.push(route);
+    },
+
     dateFormatter: function (date) {
       const newDate = new Date(date);
 
@@ -75,15 +77,22 @@ a:link,
 a:active {
   text-decoration: none;
 }
-
 .container {
+  min-width: 0;
   display: flex;
+  flex-shrink: 1;
   justify-content: center;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   margin-bottom: 5px;
 }
+span {
+  min-width: 0;
+}
 
+a {
+  min-width: 0;
+}
 .container-footer {
   display: flex;
   background: #ccc5b9;

@@ -2,7 +2,7 @@
   <div class="aPost">
     <HeaderBar />
     <div id="form">
-      <h3>Edit Post</h3>
+      <h3>Add Post</h3>
       <label for="message">Post Text: </label>
       <input
         name="message"
@@ -12,13 +12,13 @@
         v-model="post.message"
       />
       <div id="buttons">
-        <button v-on:click="updatePost" class="updatePost">Update</button>
-        <button v-on:click="deletePost" class="deletePost">Delete</button>
+        <button v-on:click="addPost" class="addPost">Add</button>
       </div>
     </div>
     <FooterBar />
   </div>
 </template>
+
 <script setup>
 import HeaderBar from "../components/HeaderBar.vue";
 import FooterBar from "../components/FooterBar.vue";
@@ -26,34 +26,21 @@ import FooterBar from "../components/FooterBar.vue";
 
 <script>
 export default {
-  name: "APost",
+  name: "AddPost",
   data() {
     return {
       post: {
-        id: "",
         date: "",
         message: "",
       },
     };
   },
   methods: {
-    getDate: function () {
-      const newDate = new Date();
-      return newDate;
-    },
-    fetchAPost(id) {
-      // fetch one post with the specied id (id)
-      fetch(`http://localhost:3000/api/posts/${id}`)
-        .then((response) => response.json())
-        .then((data) => (this.post = data))
-        .catch((err) => console.log(err.message));
-    },
-
-    updatePost() {
-     // this.post.date = this.getDate();
-      // using Fetch - put method - updates a specific post based on the passed id and the specified body
-      fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
-        method: "PUT",
+    addPost() {
+      this.post.date = new Date();
+      console.log(this.post.date);
+      fetch(`http://localhost:3000/api/posts/`, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
@@ -69,29 +56,11 @@ export default {
           console.log(e);
         });
     },
-    deletePost() {
-      // using Fetch - delete method - delets a specific post based on the passed id
-      fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-      })
-        .then((response) => {
-          console.log(response.data);
-          // We are using the router instance of this element to navigate to a different URL location
-          this.$router.push("/posts");
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    },
-  },
-  mounted() {
-    this.fetchAPost(this.$route.params.id);
   },
 };
 </script>
 
-<style scoped>
+<style>
 #form {
   max-width: 420px;
   margin: 100px auto;

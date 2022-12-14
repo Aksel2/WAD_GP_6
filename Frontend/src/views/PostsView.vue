@@ -1,7 +1,7 @@
 <template>
   <div class="posts">
     <HeaderBar />
-    <button class="logbtn" v-on:click="resetLikes">Logout</button>
+    <button class="logbtn" v-on:click="logOut">Logout</button>
     <div class="post" v-for="post in posts" :key="post.id">
       <post-comp
         v-bind:key="post.id"
@@ -9,8 +9,10 @@
         v-bind:date="post.date"
       ></post-comp>
     </div>
-    <button v-on:click="addPost">Add Post</button>
-    <button v-on:click="deleteAllPosts" class="btn2">Delete all</button>
+    <div class="btns">
+      <button v-on:click="addPost">Add Post</button>
+      <button v-on:click="deleteAllPosts" class="btn2">Delete all</button>
+    </div>
     <FooterBar />
   </div>
 </template>
@@ -43,7 +45,7 @@ export default {
     },
 
     addPost() {
-      this.$router.push('/api/addpost');
+      this.$router.push("/api/addpost");
     },
 
     deleteAllPosts() {
@@ -55,7 +57,7 @@ export default {
         .then((response) => {
           console.log(response.data);
           // We are using the router instance of this element to navigate to a different URL location
-          this.$router.push('/posts');
+          this.$router.push("/posts");
         })
         .catch((e) => {
           console.log(e);

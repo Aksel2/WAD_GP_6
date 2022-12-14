@@ -2,7 +2,9 @@
   <div class="main-div">
     <HeaderBar />
     <div class="content">
-      <p>Information here</p>
+      <p>You can contact us by phone or email</p>
+      <p>Phone: +372905397523</p>
+      <p>Email: postit@posts.ee</p>
     </div>
     <FooterBar />
   </div>

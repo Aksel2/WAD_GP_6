@@ -1,5 +1,5 @@
 <template>
-  <div class="aPost">
+  <div class="addPost">
     <HeaderBar />
     <div id="form">
       <h3>Add Post</h3>
@@ -48,8 +48,6 @@ export default {
       })
         .then((response) => {
           console.log(response.data);
-          //this.$router.push("/apost/" + this.post.id);
-          // We are using the router instance of this element to navigate to a different URL location
           this.$router.push("/posts");
         })
         .catch((e) => {
@@ -91,6 +89,7 @@ input {
   border-bottom: 1px solid white;
   color: black;
 }
+
 button {
   background: #7dd9fb;
   border: 0;

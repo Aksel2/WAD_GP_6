@@ -13,6 +13,20 @@ app.use(express.json());
 app.use(cors({ origin: "http://localhost:8080", credentials: true }));
 app.use(cookieParser()); // Parse Cookie header and populate req.cookies with an object keyed by the cookie names.
 
+// auth middleware
+app.use(async (req, res, next) => {
+	console.log('authentication middleware');
+	try {
+
+	// validate the token and call next() to allow other routes to execute,
+    // or send response / error if token is not valid
+
+	} catch (err) {
+		console.error(err.message);
+		res.status(400).send(err.message);
+	}
+
+});
 //The express.json() function is a built-in middleware function in Express.
 //It parses incoming requests with JSON payloads and is based on body-parser.
 

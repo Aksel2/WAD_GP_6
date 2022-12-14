@@ -9,36 +9,20 @@
             <strong>Welcome to PostIt!</strong>
             <div class="input-field">
               <span>Email</span>
-              <input
-                v-model="email"
-                type="text"
-                id="email"
-                placeholder="Email"
-                required="required"
-              />
+              <input v-model="email" type="text" id="email" placeholder="Email" required="required" />
             </div>
 
             <div class="input-field">
               <span>Password</span>
-              <input
-                v-model="password"
-                type="text"
-                id="password"
-                placeholder="Password"
-                required="required"
-              />
+              <input v-model="password" type="text" id="password" placeholder="Password" required="required" />
             </div>
 
             <div v-if="passwordError" class="error">{{ passwordError }}</div>
             <!-- <router-link :is="passwordError == ''" :to="{ path: '/' }"> -->
-            <button
-              v-on:click="registerUser"
-              type="submit"
-              class="button"
-              required="required"
-            >
-              Sing Up
-            </button>
+              <div class="buttons">
+            <button v-on:click="Login" type="submit" class="button" required="required">Login</button>
+            <button v-on:click="SignUp" type="submit" class="button" required="required">Sing Up</button>
+              </div>
             <!-- </router-link> -->
           </div>
         </div>
@@ -87,6 +71,62 @@ export default {
           ? "Password must contain the character '_' "
           : "";
     },
+
+    LogIn() {
+      var data = {
+        email: this.email,
+        password: this.password,
+      };
+
+      console.log('starting login')
+      // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
+      fetch("http://localhost:3000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include", //  Don't forget to specify this if you need cookies
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          //this.$router.push("/");
+          location.assign("/");
+        })
+        .catch((e) => {
+          console.log(e);
+          console.log("error");
+        });
+    },
+
+    SignUp() {
+      var data = {
+        email: this.email,
+        password: this.password,
+      };
+
+      console.log('starting signup')
+      // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
+      fetch("http://localhost:3000/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include", //  Don't forget to specify this if you need cookies
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          this.$router.push("/");
+          //location.assign("/");
+        })
+        .catch((e) => {
+          console.log(e);
+          console.log("error");
+        });
+    },
   },
 };
 </script>
@@ -132,11 +172,21 @@ div form {
   padding-left: 1px;
   margin-bottom: 5px;
 }
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
 .button,
 #upload::-webkit-file-upload-button {
   width: fit-content;
+  text-align: center;
+  justify-content: center;
   height: 2em;
   border-radius: 5px;
+  margin-left: 0;
   border: solid 1px gray;
 
   background: #fff;

@@ -50,6 +50,7 @@ export default {
       fetch(`http://localhost:3000/auth/posts/`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
+        credentials: "include", //  Don't forget to specify this if you need cookies
       })
         .then((response) => {
           console.log(response.data);

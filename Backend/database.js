@@ -90,7 +90,7 @@ execute(createPostsTableQuery)
     }
   })
   .then(async (result) => {
-    console.log("\nPopulating posts table");
+    // console.log("\nPopulating posts table");
     //await populatePostsTable();
   });
 

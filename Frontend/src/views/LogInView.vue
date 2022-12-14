@@ -5,7 +5,7 @@
       <form @sumbit.prevent="index.html">
         <div class="form">
           <div class="window border-shadowed">
-            <h2 class="heading">Sign Up</h2>
+            <h2 class="heading">Log In</h2>
             <strong>Welcome to PostIt!</strong>
             <div class="input-field">
               <span>Email</span>
@@ -19,9 +19,10 @@
 
             <div v-if="passwordError" class="error">{{ passwordError }}</div>
             <!-- <router-link :is="passwordError == ''" :to="{ path: '/' }"> -->
-              <div class="buttons">
-            <button v-on:click="SignUp" type="submit" class="button" required="required">Sing Up</button>
-              </div>
+            <div class="buttons">
+              <button v-on:click="LogIn" type="submit" class="button" required="required">Login</button>
+              <button v-on:click="SignUp" type="submit" class="button" required="required">Sing Up</button>
+            </div>
             <!-- </router-link> -->
           </div>
         </div>
@@ -38,7 +39,7 @@ import FooterBar from "../components/FooterBar.vue";
 </script>
 <script>
 export default {
-  name: "SignUpView",
+  name: "LogInView",
   components: {},
 
   data() {
@@ -52,23 +53,6 @@ export default {
   methods: {
     registerUser() {
       console.log(this.email, this.password);
-
-      this.passwordError =
-        this.password.length < 8
-          ? "Password must to be at least 8 characters long"
-          : this.password.length > 15
-          ? "Password must be less than 15 characters long"
-          : !/[A-Z]/.test(this.password)
-          ? "Password must contain an uppercase letter"
-          : !/[a-z]{2}/.test(this.password)
-          ? "Password must contain at least two lowercase letters "
-          : !/[1-9]/.test(this.password)
-          ? "Password must contain at least one numberic value "
-          : !/[A-Z]/.test(this.password[0])
-          ? "Password must start with an uppercase letter"
-          : !/_/.test(this.password)
-          ? "Password must contain the character '_' "
-          : "";
     },
 
     LogIn() {
@@ -101,33 +85,7 @@ export default {
     },
 
     SignUp() {
-      var data = {
-        email: this.email,
-        password: this.password,
-      };
-
-      console.log("starting signup");
-      // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
-      fetch("http://localhost:3000/auth/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include", //  Don't forget to specify this if you need cookies
-        body: JSON.stringify(data),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          this.$router.push("/");
-          //location.assign("/");
-        })
-        .catch((e) => {
-          console.log(e);
-          console.log("error");
-        });
-
-      this.$router.push("/posts");
+      this.$router.push("/SignUp");
     },
   },
 };

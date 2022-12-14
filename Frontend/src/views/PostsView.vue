@@ -9,7 +9,7 @@
         v-bind:date="post.date"
       ></post-comp>
     </div>
-    <button v-on:click="resetLikes">Add Post</button>
+    <button v-on:click="addPost">Add Post</button>
     <button v-on:click="deleteAllPosts" class="btn2">Delete all</button>
     <FooterBar />
   </div>
@@ -42,6 +42,10 @@ export default {
         .catch((err) => console.log(err.message));
     },
 
+    addPost() {
+      this.$router.push('/api/addpost');
+    },
+
     deleteAllPosts() {
       // using Fetch - TRUNCATE  method - removes all posts from the table
       fetch(`http://localhost:3000/api/posts/`, {
@@ -51,7 +55,7 @@ export default {
         .then((response) => {
           console.log(response.data);
           // We are using the router instance of this element to navigate to a different URL location
-          this.$router.push("/posts");
+          this.$router.push('/posts');
         })
         .catch((e) => {
           console.log(e);
@@ -69,7 +73,6 @@ export default {
 </script>
 
 <style scoped>
-
 .posts button {
   flex-direction: column;
   font-family: "Monospace", Monaco;

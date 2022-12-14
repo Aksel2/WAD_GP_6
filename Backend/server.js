@@ -45,9 +45,9 @@ app.get('/api/posts', async (req, res) => {
     try {
         console.log("get posts request has arrived");
         const posts = await pool.query(
-            "SELECT * FROM posts ORDER BY date DESC"
+            "SELECT * FROM posts ORDER BY id DESC"
         );
-        console.log(posts)
+        //console.log(posts)
         res.json(posts.rows);
     } catch (err) {
         console.error(err.message);
@@ -79,9 +79,10 @@ app.put('/api/posts/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const post = req.body;
+        console.log(post.date);
         console.log("update request has arrived");
         const updatepost = await pool.query(
-            "UPDATE posts SET (date, message) = ($3, $2) WHERE id = $1", [id, post.message, post.date]
+            "UPDATE posts SET message = ($2) WHERE id = $1", [id, post.message]
         );
         res.json(updatepost);
     } catch (err) {

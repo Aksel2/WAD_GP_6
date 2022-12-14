@@ -1,7 +1,7 @@
 <template>
   <div class="posts">
     <HeaderBar />
-    <button class="logbtn" v-on:click="logOut">Logout</button>
+    <button class="logbtn" v-on:click="Logout">Logout</button>
     <div class="post" v-for="post in posts" :key="post.id">
       <post-comp v-bind:key="post.id" v-bind:message="post.message" v-bind:date="post.date"></post-comp>
     </div>
@@ -32,6 +32,24 @@ export default {
   methods: {
     resetLikes: function () {
       this.$store.dispatch("resetLikesAct");
+    }, 
+    
+    Logout() {
+      fetch("http://localhost:3000/auth/logout", {
+          credentials: 'include', //  Don't forget to specify this if you need cookies
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log('jwt removed');
+        //console.log('jwt removed:' + auth.authenticated());
+        this.$router.push("/login");
+        //location.assign("/");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error logout");
+      });
     },
     fetchPosts() {
       console.log("fetching posts");

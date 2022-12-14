@@ -133,6 +133,7 @@ app.post("/auth/posts", auth, async (req, res) => {
   try {
     console.log("a post request has arrived");
     const post = req.body;
+    console.log(post);
     const newpost = await pool.query(
       "INSERT INTO posts (date, message) values ($2, $1)    RETURNING*",
       [post.message, post.date]
@@ -151,7 +152,7 @@ app.get("/posts", async (req, res) => {
   try {
     console.log("get posts request has arrived");
     const posts = await pool.query("SELECT * FROM posts ORDER BY date DESC");
-    // console.log(posts);
+     console.log(posts);
     res.json(posts.rows);
   } catch (err) {
     console.error(err.message);
@@ -184,10 +185,9 @@ app.put("/auth/posts/:id", auth, async (req, res) => {
     const { id } = req.params;
     const post = req.body;
     console.log("update request has arrived");
-    const updatepost = await pool.query("UPDATE posts SET (date, message) = ($3, $2) WHERE id = $1", [
+    const updatepost = await pool.query("UPDATE posts SET message = ($2) WHERE id = $1", [
       id,
       post.message,
-      post.date,
     ]);
     res.json(updatepost);
   } catch (err) {

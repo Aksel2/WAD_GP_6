@@ -10,9 +10,9 @@ import PageNotFound from "../views/PageNotFound.vue";
 const routes = [
   {
     path: "/",
-    name: "posts",
+    name: "signup",
     // component: () => import("../views/PostsView.vue"),
-    component: PostsView,
+    component: SignUpView,
   },
 
   {
@@ -21,12 +21,12 @@ const routes = [
     component: PostsView,
   },
   {
-    path: "/api/apost/:id",
+    path: "/auth/apost/:id",
     name: "APost",
     component: APost,
   },
   {
-    path: "/api/addpost",
+    path: "/auth/addpost",
     name: "AddPost",
     component: AddPost,
   },
